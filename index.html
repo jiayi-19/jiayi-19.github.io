@@ -33,7 +33,7 @@
                 </p>
               </td>
               <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/picture.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/JonBarron.jpg" class="hoverZoomLink"></a>
+                <a href="images/picture.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/picture.jpg" class="hoverZoomLink"></a>
               </td>
             </tr>
           </tbody></table>
@@ -42,7 +42,7 @@
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <h2>Research</h2>
                 <p>
-                  I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields. Some papers are <span class="highlight">highlighted</span>.
+                  I'm interested in efficient machine learning algorithm and system design along with hardware accelerator design. I'm particularly intereste in Embodied AI and Neuro-Symbolic AI systems. My publications are listed below.
                 </p>
               </td>
             </tr>
@@ -50,27 +50,101 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
-
-
-            <tr onmouseout="mamba_stop()" onmouseover="mamba_start()">
-              <td style="padding:10px;width:20%;vertical-align:middle;text-align: center">
-              <div style="display: flex; align-items: center; margin-bottom: 0;">
-                    <div style="flex: 1;">
-                  <img src="images/amoeballm.png" alt="mamba" style="width: 270px;">
-                </div>
-               </div>
-              </td>
-              <td style="padding:10px;width:80%;vertical-align:middle">
-                <div style="padding-left: 10px;">
-                  <h3 style="margin: 0;">AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment</h3>
-                  <p style="margin: 5px 0;">Yonggan Fu, <\<strong>Jiayi Qian*</strong>, Zhongzhi Yu*, Junwei Li*, Yongan Zhang, Dachuan Shi, Xiangchi Yuan, Roman Yakunin, Yingyan (Celine) Lin
-                  <p style="margin: 5px 0;"><i>NeurIPS 2024</i></p>
-                </div>
+            <tr onmouseout="ff_stop()" onmouseover="ff_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='ff_image'>
+                  <img src='images/ASPLOS25_ReCA.png' width="170"></div>
+                <img src='images/ASPLOS25_ReCA.png' width="170">
               </div>
-              </td>
-              </tr>
+              <script type="text/javascript">
+                function ff_start() {
+                  document.getElementById('ff_image').style.opacity = "1";
+                }
 
+                function ff_stop() {
+                  document.getElementById('ff_image').style.opacity = "0";
+                }
+                ff_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+                  <papertitle>ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents</papertitle>
+              <br>
+              <a href="https://zishenwan.github.io">Zishen Wan</a>,
+              <a href="https://zishenwan.github.io">Yuhang Du</a>,
+              <a href="https://mohamed-s-ibrahim.github.io">Mohamed Ibrahim</a>,
+              <strong>Jiayi Qian</strong>,
+              <a href="http://jabbourjason.com">Jason Jabbour</a>,
+              <a href="https://www.yangkatiezhao.net">Yang (Katie) Zhao</a>,
+              <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>,
+              <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
+              <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&hl=en">Vijay Janapa Reddi</a>
+              <br>
+              <em>ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems (<strong>ASPLOS</strong>)</em>, 2025
+              <br>
+              Paper (To appear)
+              <br>
+              <p></p>
+            </td>
+          </tr> 
 
+          <tr onmouseout="ff_stop()" onmouseover="ff_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='ff_image'>
+                  <img src='images/ISPASS25_EmbodiedPerf.png' width="170"></div>
+                <img src='images/ISPASS25_EmbodiedPerf.png' width="170">
+              </div>
+              <script type="text/javascript">
+                function ff_start() {
+                  document.getElementById('ff_image').style.opacity = "1";
+                }
+
+                function ff_stop() {
+                  document.getElementById('ff_image').style.opacity = "0";
+                }
+                ff_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+                  <papertitle>Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability</papertitle>
+              <br>
+              <a href="https://zishenwan.github.io">Zishen Wan</a>,
+              <strong>Jiayi Qian</strong>,,
+              <a href="https://zishenwan.github.io">Yuhang Du</a>,
+              <a href="http://jabbourjason.com">Jason Jabbour</a>,
+              <a href="https://yilundu.github.io">Yilun Du</a>,
+              <a href="https://www.yangkatiezhao.net">Yang (Katie) Zhao</a>,
+              <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
+              <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>,
+              <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&hl=en">Vijay Janapa Reddi</a>
+              <br>
+              <em>IEEE International Symposium on Performance Analysis of Systems and Software (<strong>ISPASS</strong>)</em>, 2025
+              <br>
+              Paper (To appear)
+              <br>
+              <p></p>
+            </td>
+          </tr> 
+
+          <tr onmouseout="mamba_stop()" onmouseover="mamba_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle;text-align: center">
+            <div style="display: flex; align-items: center; margin-bottom: 0;">
+                  <div style="flex: 1;">
+                <img src="images/amoeballm.png" alt="mamba" style="width: 270px;">
+              </div>
+             </div>
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <div style="padding-left: 10px;">
+                <h3 style="margin: 0;">AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment</h3>
+                <p style="margin: 5px 0;">Yonggan Fu, <\<strong>Jiayi Qian*</strong>, Zhongzhi Yu*, Junwei Li*, Yongan Zhang, Dachuan Shi, Xiangchi Yuan, Roman Yakunin, Yingyan (Celine) Lin
+                <p style="margin: 5px 0;"><i>NeurIPS 2024</i></p>
+              </div>
+            </div>
+            </td>
+            </tr>
     
 
           </tbody></table>
@@ -87,7 +161,7 @@
                   <ul style="list-style-type: none; padding: 0; margin: 0;">
                     <li>
                       <strong>Teaching Assistant</strong> CSE 6140 Comp Sci&Engr Algorithms, Georgia Tech, 2024 Spring, instructor: 
-                      <a href="https://xiuweizhang.wordpress.com/">Prof. Anq</a>.
+                      <a href="https://xiuweizhang.wordpress.com/">Prof. Xiuwei Zhang</a>.
                     </li>
               <li>
                     </li>
