@@ -8,26 +8,33 @@
     <meta name="google-site-verification" content="bNBA0qiJv70cy2klW2Q1F4kdn8U1GilCya2gvf1qlIs" />
     <link rel="shortcut icon" href="images/favicon/dota2.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <!-- Minimal safety styles -->
+    <!-- Minimal safety + tighter spacing -->
     <style>
-      /* keep the page from collapsing */
       img { max-width: 100%; height: auto; }
-      table { width: 100%; }
-      /* simple hover overlay if you stack two images */
+      table { width: 100%; border-spacing: 0; }
+      /* hover overlay for stacked images */
       .one { position: relative; display: inline-block; }
       .one .two { position: absolute; inset: 0; opacity: 0; transition: opacity .2s ease; }
       .one:hover .two { opacity: 1; }
+
+      /* Tighter publications spacing */
+      .pubs td { padding: 12px 14px; }           /* down from 20px */
+      .pubs papertitle { font-weight: 600; }
+      .pubs em { display: block; margin: 2px 0 4px; }
+      .pubs p { margin: 6px 0; line-height: 1.35; }  /* tighter paragraph spacing */
+      /* Slightly tighter section paddings too */
+      .section-pad { padding: 12px 16px; }
     </style>
   </head>
 
   <body>
     <!-- Outer container -->
-    <table style="width:100%;max-width:1100px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+    <table style="max-width:1100px;border:0;border-collapse:separate;margin:0 auto;">
       <tbody>
         <tr>
           <td style="padding:0;">
             <!-- Header -->
-            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table style="border:0;border-collapse:separate;margin:0 auto;">
               <tbody>
                 <tr>
                   <!-- Left: text -->
@@ -69,12 +76,12 @@
             </table>
 
             <!-- Research blurb -->
-            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table style="border:0;border-collapse:separate;margin:0 auto;">
               <tbody>
                 <tr>
-                  <td style="padding:16px;vertical-align:top;">
-                    <h2>Research</h2>
-                    <p>
+                  <td class="section-pad" style="vertical-align:top;">
+                    <h2 style="margin: 0 0 8px;">Research</h2>
+                    <p style="margin:6px 0; line-height:1.35;">
                       I'm interested in efficient machine learning algorithm and system design along with hardware accelerator design.
                       I'm particularly interested in Embodied AI and Neuro-Symbolic AI systems.
                       My publications are listed below.
@@ -84,19 +91,19 @@
               </tbody>
             </table>
 
-            <!-- Publications: keep ALL rows inside this single table -->
-            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <!-- Publications -->
+            <table class="pubs" style="border:0;border-collapse:separate;margin:0 auto;">
               <tbody>
 
                 <!-- Pub A -->
                 <tr>
-                  <td style="padding:20px;width:25%;vertical-align:middle;">
+                  <td style="width:25%;vertical-align:middle;">
                     <div class="one">
                       <img src="images/ASPLOS26_NSAI.png" width="170" alt="NSAI teaser">
                       <img class="two" src="images/ASPLOS26_NSAI.png" width="170" alt="">
                     </div>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:middle;">
+                  <td style="width:75%;vertical-align:middle;">
                     <papertitle>Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
@@ -118,13 +125,13 @@
 
                 <!-- Pub B -->
                 <tr>
-                  <td style="padding:20px;width:25%;vertical-align:top;">
+                  <td style="width:25%;vertical-align:top;">
                     <div class="one">
                       <img src="images/post_diff.png" width="170" alt="Diffusion deployment">
                       <img class="two" src="images/post_diff.png" width="170" alt="">
                     </div>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:top;">
+                  <td style="width:75%;vertical-align:top;">
                     <papertitle>Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment</papertitle>
                     <br>
                     <a>Zhenbang Du</a>,
@@ -142,13 +149,13 @@
 
                 <!-- Pub C -->
                 <tr>
-                  <td style="padding:20px;width:25%;vertical-align:top;">
+                  <td style="width:25%;vertical-align:top;">
                     <div class="one">
                       <img src="images/ISPASS25_EmbodiedPerf.png" width="170" alt="Embodied systems">
                       <img class="two" src="images/ISPASS25_EmbodiedPerf.png" width="170" alt="">
                     </div>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:top;">
+                  <td style="width:75%;vertical-align:top;">
                     <papertitle>Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
@@ -169,13 +176,13 @@
 
                 <!-- Pub D -->
                 <tr>
-                  <td style="padding:20px;width:25%;vertical-align:top;">
+                  <td style="width:25%;vertical-align:top;">
                     <div class="one">
                       <img src="images/ASPLOS25_ReCA.png" width="170" alt="ReCA">
                       <img class="two" src="images/ASPLOS25_ReCA.png" width="170" alt="">
                     </div>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:top;">
+                  <td style="width:75%;vertical-align:top;">
                     <papertitle>ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
@@ -196,13 +203,13 @@
 
                 <!-- Pub E -->
                 <tr>
-                  <td style="padding:20px;width:25%;vertical-align:top;">
+                  <td style="width:25%;vertical-align:top;">
                     <div class="one">
                       <img src="images/amoeballm.png" width="170" alt="AmoebaLLM">
                       <img class="two" src="images/amoeballm.png" width="170" alt="">
                     </div>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:top;">
+                  <td style="width:75%;vertical-align:top;">
                     <papertitle>AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment</papertitle>
                     <br>
                     <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
@@ -215,7 +222,7 @@
                     <a href="https://www.linkedin.com/in/ryakunin/">Roman Yakunin</a>,
                     <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
                     <br>
-                    <em>The Thirty-Eighth Annual Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>)</em>, 2024
+                    <em>The Thirty-Eighth Annual Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>)</em>, 2024</em>
                     <br>
                     <a href="https://arxiv.org/abs/2411.10606">Paper</a>
                   </td>
@@ -225,11 +232,11 @@
             </table>
 
             <!-- Teaching -->
-            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;text-align:left;">
+            <table style="border:0;border-collapse:separate;margin:0 auto;text-align:left;">
               <tbody>
                 <tr>
-                  <td style="padding:15px;vertical-align:top;">
-                    <h2 style="margin:0 0 10px;">Teaching Experience</h2>
+                  <td class="section-pad" style="vertical-align:top;">
+                    <h2 style="margin:0 0 8px;">Teaching Experience</h2>
                     <ul style="list-style-type:none;padding:0;margin:0;">
                       <li>
                         <strong>Teaching Assistant</strong> — CSE 6140 Algorithms, Georgia Tech, Spring 2024. Instructor:
@@ -242,12 +249,11 @@
             </table>
 
             <!-- Footer -->
-            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table style="border:0;border-collapse:separate;margin:0 auto;">
               <tbody>
                 <tr>
                   <td style="padding:0;">
-                    <br>
-                    <p style="text-align:right;font-size:small;">
+                    <p style="text-align:right;font-size:small;margin:12px 0 0;">
                       Design and source code from
                       <a href="https://github.com/jonbarron/jonbarron_website">jonbarron</a>.
                     </p>
