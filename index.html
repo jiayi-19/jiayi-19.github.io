@@ -21,7 +21,7 @@
       /* Publications spacing (vertical) */
       .pubs td { padding: 12px 12px; }
       .pubs papertitle { font-weight: 600; }
-      .pubs em { display: block; margin: 2px 0 4px; }
+      .pubs em { display: inline; margin: 0; }
       .pubs p { margin: 6px 0; line-height: 1.35; }
 
       /* Keep text position the same, but tighten the gap between image and text */
@@ -253,7 +253,23 @@
                 </tr>
               </tbody>
             </table>
+            <table style="border:0;border-collapse:separate;margin:0 auto;">
+              <tbody>
+                <tr>
+                  <td class="section-pad" style="vertical-align:top;">
+                    <h2 style="margin:0 0 8px;">Visitors</h2>
 
+                    <!-- The globe renders right after this script tag, inline in this cell -->
+                    <script
+                      type="text/javascript"
+                      id="clstr_globe"
+                      src="https://clustrmaps.com/globe.js?d=6zBsRIk3lu9rP_Ucu4ovqXcs1WA36-_Oa_G1acNTGh0">
+                    </script>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <!-- Footer -->
             <table style="border:0;border-collapse:separate;margin:0 auto;">
               <tbody>
