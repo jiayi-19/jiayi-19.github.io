@@ -8,68 +8,75 @@
     <meta name="google-site-verification" content="bNBA0qiJv70cy2klW2Q1F4kdn8U1GilCya2gvf1qlIs" />
     <link rel="shortcut icon" href="images/favicon/dota2.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- Minimal safety styles -->
+    <style>
+      /* keep the page from collapsing */
+      img { max-width: 100%; height: auto; }
+      table { width: 100%; }
+      /* simple hover overlay if you stack two images */
+      .one { position: relative; display: inline-block; }
+      .one .two { position: absolute; inset: 0; opacity: 0; transition: opacity .2s ease; }
+      .one:hover .two { opacity: 1; }
+    </style>
   </head>
 
   <body>
-    <!-- 外层主表格 -->
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <!-- Outer container -->
+    <table style="width:100%;max-width:1100px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
       <tbody>
-        <tr style="padding:0px">
-          <td style="padding:0px">
-            <!-- 顶部信息表格 -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tr>
+          <td style="padding:0;">
+            <!-- Header -->
+            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
               <tbody>
-                <tr style="padding:0px">
-                  <!-- 左侧文字单元格：改为 vertical-align: top -->
-                  <td style="padding:2.5%;width:63%;vertical-align:top">
-                    <p class="name" style="text-align: center;">
-                      Jiayi Qian
+                <tr>
+                  <!-- Left: text -->
+                  <td style="padding:2.5%;width:63%;vertical-align:top;">
+                    <p class="name" style="text-align:center;">Jiayi Qian</p>
+                    <p>
+                      I'm now a first-year ECE Ph.D. student in 
+                      <a href="https://synergy.ece.gatech.edu/">Synergy Lab</a> at
+                      <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, advised by
+                      <a href="https://tusharkrishna.ece.gatech.edu/">Prof. Tushar Krishna</a> on Efficient Compositional AI systems and ML Accelerator Design.
                     </p>
                     <p>
-                      I'm now a first-year Ph.D. student in Electical and Computer Engineering at 
-                      <a href="https://www.gatech.edu//">Georgia Institute of Technology</a> advised by Prof. 
-                      <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a> on Efficient Compositional AI systems and ML Accelerator Design. 
+                      Prior to that, I obtained my M.S. degree in Computer Science, also from
+                      <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, where I worked closely with
+                      <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Prof. Yingyan (Celine) Lin</a> on efficient ML algorithms.
+                      I received my Bachelor’s degree in Electronic Engineering from
+                      <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, advised by Prof. Gang Liu on visual SLAM.
                     </p>
-                    <p>
-                      Prior to that, I obtained my M.S. degree in
-                      Computer Science also from
-                      <a href="https://www.gatech.edu//">Georgia Institute of Technology</a>, where I have worked closely with Prof. 
-                      <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a> 
-                      on Efficient Machine Learning algorithms.
-                    I obtained my Bachelor degree in Electronic Engineering from 
-                      <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, 
-                      advised by Prof. Gang Liu on visual SLAM.
-                    
+
                     <p style="text-align:center">
                       <a href="mailto:jiayiqian@gatech.edu">Email</a> &nbsp;/&nbsp;
                       <a href="data/CV-Jiayi.pdf">CV</a> &nbsp;/&nbsp;
                       <a href="https://scholar.google.com/citations?user=-yGPXHkAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-                      <a href="https://www.linkedin.com/in/jiayi-qian-988848294/">Linkedin</a> &nbsp;/&nbsp;
+                      <a href="https://www.linkedin.com/in/jiayi-qian-988848294/">LinkedIn</a>
                     </p>
                   </td>
-                  <!-- 右侧头像单元格：改为 vertical-align: top -->
-                  <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:top">
+
+                  <!-- Right: photo -->
+                  <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:top;">
                     <a href="images/cat.png">
-                      <img 
-                        style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" 
-                        alt="profile photo" 
-                        src="images/cat.png" 
-                        class="hoverZoomLink">
+                      <img
+                        style="width:100%;max-width:100%;object-fit:cover;border-radius:50%;"
+                        alt="profile photo"
+                        src="images/cat.png">
                     </a>
                   </td>
                 </tr>
               </tbody>
             </table>
 
-            <!-- Research 简介表格 -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <!-- Research blurb -->
+            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
               <tbody>
                 <tr>
-                  <td style="padding:16px;width:100%;vertical-align:top">
+                  <td style="padding:16px;vertical-align:top;">
                     <h2>Research</h2>
                     <p>
                       I'm interested in efficient machine learning algorithm and system design along with hardware accelerator design.
-                      I'm particularly interested in Embodied AI and Neuro-Symbolic AI systems. 
+                      I'm particularly interested in Embodied AI and Neuro-Symbolic AI systems.
                       My publications are listed below.
                     </p>
                   </td>
@@ -77,110 +84,72 @@
               </tbody>
             </table>
 
-            <!-- Publications 列表 -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <!-- Publications: keep ALL rows inside this single table -->
+            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
               <tbody>
-              <tr onmouseout="ff_stop()" onmouseover="ff_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='ff_image'>
-                      <img src='images/ASPLOS26_NSAI.png' width="170"></div>
-                    <img src='images/ASPLOS26_NSAI.png' width="170">
-                  </div>
-                  <script type="text/javascript">
-                    function ff_start() {
-                      document.getElementById('ff_image').style.opacity = "1";
-                    }
-                    function ff_stop() {
-                      document.getElementById('ff_image').style.opacity = "0";
-                    }
-                    ff_stop()
-                  </script>
-                </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                      <papertitle>Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</papertitle>
-                  <br>
-                  <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                  <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
-                  <strong>Jiayi Qian*</strong>,
-                  <a href="https://scholar.google.com/citations?user=I8kUcx4AAAAJ&hl=en">Ritik Raj</a>,
-                  <a href="https://sites.google.com/casys.kaist.ac.kr/jupark/">Joongun Park</a>,
-                  <a href="https://scholar.google.com/citations?user=QI96hfoAAAAJ&hl=en">Chenyu Wang</a>,
-                  <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
-                  <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
-                  <br>
-                  <em>ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems (<strong>ASPLOS</strong>)</em>, 2026
-                  <br>Paper (To appear)
-                  <br>
-                  <p></p>
-                  <p>Compositional AI integrates LLMs, symbolic, and probabilistic modules to enhance interpretability, robustness, and trustworthiness for cognitive applications. This paper presents a comprehensive system-level analysis of neuro-symbolic-probabilistic AI and reveals its key performance characteristics.</p>
-                </td>
-                </tr> 
-                  <tr onmouseout="ff_stop()" onmouseover="ff_start()">
-                    <td style="padding:20px;width:75%;vertical-align:top">
-                      <!-- 如果你想在这个条目也用两张图叠加，可以照前面写法 -->
-                      <div class="one" style="display: flex; justify-content: space-around; align-items: flex-start;">
-                        <div class="two" id='ff_image'>
-                          <img src='images/post_diff.png' width="170">
-                        </div>
-                      </div>
-                      <script type="text/javascript">
-                        function ff_start() {
-                          document.getElementById('ff_image').style.opacity = "1";
-                        }
-                        function ff_stop() {
-                          document.getElementById('ff_image').style.opacity = "0";
-                        }
-                        ff_stop();
-                      </script>
-                    </td>
-                    <td style="padding:20px;width:75%;vertical-align:top">
-                      <papertitle>
-                        Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment
-                      </papertitle>
-                      <br>
-                      <a>Zhenbang Du</a>,
-                      <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
-                      <a>Lifu Wang</a>,
-                      <strong>Jiayi Qian*</strong>,
-                      <a>Xiao Luo*</a>,
-                      <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
-                      <br>
-                      <em>International Conference on Computer Vision
-                        (<strong>ICCV</strong>)</em>, 2025
-                      <br>
-                      <a href="https://arxiv.org/pdf/2508.06160">Paper</a> /
-                      <br>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-                <!-- Publication 1 -->
-                <tr onmouseout="ff_stop()" onmouseover="ff_start()">
-                  <!-- 左侧单元格：改为 vertical-align: top -->
-                  <td style="padding:20px;width:75%;vertical-align:top">
+
+                <!-- Pub A -->
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:middle;">
                     <div class="one">
-                      <div class="two" id='ff_image'>
-                        <img src='images/ISPASS25_EmbodiedPerf.png' width="170">
-                      </div>
-                      <!-- 如果只需要一张图片, 可以删除下面这行 -->
-                      <img src='images/ISPASS25_EmbodiedPerf.png' width="170">
+                      <img src="images/ASPLOS26_NSAI.png" width="170" alt="NSAI teaser">
+                      <img class="two" src="images/ASPLOS26_NSAI.png" width="170" alt="">
                     </div>
-                    <script type="text/javascript">
-                      function ff_start() {
-                        document.getElementById('ff_image').style.opacity = "1";
-                      }
-                      function ff_stop() {
-                        document.getElementById('ff_image').style.opacity = "0";
-                      }
-                      ff_stop();
-                    </script>
                   </td>
-                  <!-- 右侧文字单元格：改为 vertical-align: top -->
-                  <td style="padding:20px;width:75%;vertical-align:top">
-                    <papertitle>
-                      Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability
-                    </papertitle>
+                  <td style="padding:20px;width:75%;vertical-align:middle;">
+                    <papertitle>Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</papertitle>
+                    <br>
+                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
+                    <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
+                    <strong>Jiayi Qian*</strong>,
+                    <a href="https://scholar.google.com/citations?user=I8kUcx4AAAAJ&hl=en">Ritik Raj</a>,
+                    <a href="https://sites.google.com/casys.kaist.ac.kr/jupark/">Joongun Park</a>,
+                    <a href="https://scholar.google.com/citations?user=QI96hfoAAAAJ&hl=en">Chenyu Wang</a>,
+                    <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
+                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
+                    <br>
+                    <em>ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems (<strong>ASPLOS</strong>)</em>, 2026
+                    <br>Paper (To appear)
+                    <p>
+                      Compositional AI integrates LLMs, symbolic, and probabilistic modules to enhance interpretability, robustness, and trustworthiness for cognitive applications. This paper presents a comprehensive system-level analysis of neuro-symbolic-probabilistic AI and reveals its key performance characteristics.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Pub B -->
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:top;">
+                    <div class="one">
+                      <img src="images/post_diff.png" width="170" alt="Diffusion deployment">
+                      <img class="two" src="images/post_diff.png" width="170" alt="">
+                    </div>
+                  </td>
+                  <td style="padding:20px;width:75%;vertical-align:top;">
+                    <papertitle>Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment</papertitle>
+                    <br>
+                    <a>Zhenbang Du</a>,
+                    <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
+                    <a>Lifu Wang</a>,
+                    <strong>Jiayi Qian*</strong>,
+                    <a>Xiao Luo*</a>,
+                    <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
+                    <br>
+                    <em>International Conference on Computer Vision (<strong>ICCV</strong>)</em>, 2025
+                    <br>
+                    <a href="https://arxiv.org/pdf/2508.06160">Paper</a>
+                  </td>
+                </tr>
+
+                <!-- Pub C -->
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:top;">
+                    <div class="one">
+                      <img src="images/ISPASS25_EmbodiedPerf.png" width="170" alt="Embodied systems">
+                      <img class="two" src="images/ISPASS25_EmbodiedPerf.png" width="170" alt="">
+                    </div>
+                  </td>
+                  <td style="padding:20px;width:75%;vertical-align:top;">
+                    <papertitle>Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
                     <strong>Jiayi Qian</strong>,
@@ -192,40 +161,22 @@
                     <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>,
                     <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&hl=en">Vijay Janapa Reddi</a>
                     <br>
-                    <em>
-                      IEEE International Symposium on Performance Analysis of Systems and Software 
-                      (<strong>ISPASS</strong>)
-                    </em>, 2025
+                    <em>IEEE International Symposium on Performance Analysis of Systems and Software (<strong>ISPASS</strong>)</em>, 2025
                     <br>
-                    <a href="https://arxiv.org/pdf/2504.18945">Paper</a> /
-                    <br>
+                    <a href="https://arxiv.org/pdf/2504.18945">Paper</a>
                   </td>
                 </tr>
 
-                <!-- Publication 2 -->
-                <tr onmouseout="ff_stop()" onmouseover="ff_start()">
-                  <td style="padding:20px;width:25%;vertical-align:top">
+                <!-- Pub D -->
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:top;">
                     <div class="one">
-                      <div class="two" id='ff_image'>
-                        <img src='images/ASPLOS25_ReCA.png' width="170">
-                      </div>
-                      <!-- 如果只需要一张图片, 可以删除下面这行 -->
-                      <img src='images/ASPLOS25_ReCA.png' width="170">
+                      <img src="images/ASPLOS25_ReCA.png" width="170" alt="ReCA">
+                      <img class="two" src="images/ASPLOS25_ReCA.png" width="170" alt="">
                     </div>
-                    <script type="text/javascript">
-                      function ff_start() {
-                        document.getElementById('ff_image').style.opacity = "1";
-                      }
-                      function ff_stop() {
-                        document.getElementById('ff_image').style.opacity = "0";
-                      }
-                      ff_stop();
-                    </script>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:top">
-                    <papertitle>
-                      ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents
-                    </papertitle>
+                  <td style="padding:20px;width:75%;vertical-align:top;">
+                    <papertitle>ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
                     <a href="https://zishenwan.github.io">Yuhang Du</a>,
@@ -237,39 +188,22 @@
                     <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
                     <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&hl=en">Vijay Janapa Reddi</a>
                     <br>
-                    <em>
-                      ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems 
-                      (<strong>ASPLOS</strong>)
-                    </em>, 2025
+                    <em>ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems (<strong>ASPLOS</strong>)</em>, 2025
                     <br>
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3676641.3716016">Paper</a> /
-                    <br>
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3676641.3716016">Paper</a>
                   </td>
                 </tr>
 
-                <!-- Publication 3 -->
-                <tr onmouseout="ff_stop()" onmouseover="ff_start()">
-                  <td style="padding:20px;width:25%;vertical-align:top">
-                    <!-- 如果你想在这个条目也用两张图叠加，可以照前面写法 -->
-                    <div class="one" style="display: flex; justify-content: space-around; align-items: flex-start;">
-                      <div class="two" id='ff_image'>
-                        <img src='images/amoeballm.png' width="170">
-                      </div>
+                <!-- Pub E -->
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:top;">
+                    <div class="one">
+                      <img src="images/amoeballm.png" width="170" alt="AmoebaLLM">
+                      <img class="two" src="images/amoeballm.png" width="170" alt="">
                     </div>
-                    <script type="text/javascript">
-                      function ff_start() {
-                        document.getElementById('ff_image').style.opacity = "1";
-                      }
-                      function ff_stop() {
-                        document.getElementById('ff_image').style.opacity = "0";
-                      }
-                      ff_stop();
-                    </script>
                   </td>
-                  <td style="padding:20px;width:75%;vertical-align:top">
-                    <papertitle>
-                      AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment
-                    </papertitle>
+                  <td style="padding:20px;width:75%;vertical-align:top;">
+                    <papertitle>AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment</papertitle>
                     <br>
                     <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
                     <strong>Jiayi Qian*</strong>,
@@ -281,42 +215,40 @@
                     <a href="https://www.linkedin.com/in/ryakunin/">Roman Yakunin</a>,
                     <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
                     <br>
-                    <em>The Thirty-Eighth Annual Conference on Neural Information Processing Systems 
-                      (<strong>NeurIPS</strong>)</em>, 2024
+                    <em>The Thirty-Eighth Annual Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>)</em>, 2024
                     <br>
-                    <a href="https://arxiv.org/abs/2411.10606">Paper</a> /
-                    <br>
+                    <a href="https://arxiv.org/abs/2411.10606">Paper</a>
                   </td>
                 </tr>
+
               </tbody>
             </table>
 
-            <!-- Teaching Experience -->
-            <table style="width: 100%; border: 0; border-spacing: 0; border-collapse: separate; margin: 0 auto; text-align: left;">
+            <!-- Teaching -->
+            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;text-align:left;">
               <tbody>
                 <tr>
-                  <td style="padding: 15px; vertical-align:top;">
-                    <h2 style="margin: 0 0 10px;">Teaching Experience</h2>
-                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+                  <td style="padding:15px;vertical-align:top;">
+                    <h2 style="margin:0 0 10px;">Teaching Experience</h2>
+                    <ul style="list-style-type:none;padding:0;margin:0;">
                       <li>
-                        <strong>Teaching Assistant</strong> CSE 6140 Comp Sci&Engr Algorithms, Georgia Tech, 2024 Spring, instructor:
+                        <strong>Teaching Assistant</strong> — CSE 6140 Algorithms, Georgia Tech, Spring 2024. Instructor:
                         <a href="https://xiuweizhang.wordpress.com/">Prof. Xiuwei Zhang</a>.
                       </li>
-                      <li></li>
                     </ul>
                   </td>
                 </tr>
               </tbody>
             </table>
 
-            <!-- 底部声明 -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <!-- Footer -->
+            <table style="border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
               <tbody>
                 <tr>
-                  <td style="padding:0px">
+                  <td style="padding:0;">
                     <br>
                     <p style="text-align:right;font-size:small;">
-                      Design and source code from 
+                      Design and source code from
                       <a href="https://github.com/jonbarron/jonbarron_website">jonbarron</a>.
                     </p>
                   </td>
