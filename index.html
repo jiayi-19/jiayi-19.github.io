@@ -8,21 +8,30 @@
     <meta name="google-site-verification" content="bNBA0qiJv70cy2klW2Q1F4kdn8U1GilCya2gvf1qlIs" />
     <link rel="shortcut icon" href="images/favicon/dota2.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <!-- Minimal safety + tighter spacing -->
+    <!-- Minimal safety + layout tweaks -->
     <style>
       img { max-width: 100%; height: auto; }
       table { width: 100%; border-spacing: 0; }
-      /* hover overlay for stacked images */
+
+      /* Hover overlay if you stack two images */
       .one { position: relative; display: inline-block; }
       .one .two { position: absolute; inset: 0; opacity: 0; transition: opacity .2s ease; }
       .one:hover .two { opacity: 1; }
 
-      /* Tighter publications spacing */
-      .pubs td { padding: 12px 14px; }           /* down from 20px */
+      /* Publications spacing (vertical) */
+      .pubs td { padding: 12px 12px; }
       .pubs papertitle { font-weight: 600; }
       .pubs em { display: block; margin: 2px 0 4px; }
-      .pubs p { margin: 6px 0; line-height: 1.35; }  /* tighter paragraph spacing */
-      /* Slightly tighter section paddings too */
+      .pubs p { margin: 6px 0; line-height: 1.35; }
+
+      /* Keep text position the same, but tighten the gap between image and text */
+      .thumbcell { padding-right: 6px !important; } /* reduce horizontal gap */
+      .textcell  { padding-left: 6px !important; }  /* reduce horizontal gap */
+
+      /* Make pics a bit larger without moving text (column widths unchanged) */
+      .thumbimg { width: 200px; } /* was 170px; still fits inside the 25% column */
+      
+      /* Slightly tighter section padding */
       .section-pad { padding: 12px 16px; }
     </style>
   </head>
@@ -97,13 +106,13 @@
 
                 <!-- Pub A -->
                 <tr>
-                  <td style="width:25%;vertical-align:middle;">
+                  <td class="thumbcell" style="width:25%;vertical-align:middle;">
                     <div class="one">
-                      <img src="images/ASPLOS26_NSAI.png" width="170" alt="NSAI teaser">
-                      <img class="two" src="images/ASPLOS26_NSAI.png" width="170" alt="">
+                      <img class="thumbimg" src="images/ASPLOS26_NSAI.png" alt="NSAI teaser">
+                      <img class="two thumbimg" src="images/ASPLOS26_NSAI.png" alt="">
                     </div>
                   </td>
-                  <td style="width:75%;vertical-align:middle;">
+                  <td class="textcell" style="width:75%;vertical-align:middle;">
                     <papertitle>Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
@@ -117,21 +126,18 @@
                     <br>
                     <em>ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems (<strong>ASPLOS</strong>)</em>, 2026
                     <br>Paper (To appear)
-                    <p>
-                      Compositional AI integrates LLMs, symbolic, and probabilistic modules to enhance interpretability, robustness, and trustworthiness for cognitive applications. This paper presents a comprehensive system-level analysis of neuro-symbolic-probabilistic AI and reveals its key performance characteristics.
-                    </p>
                   </td>
                 </tr>
 
                 <!-- Pub B -->
                 <tr>
-                  <td style="width:25%;vertical-align:top;">
+                  <td class="thumbcell" style="width:25%;vertical-align:top;">
                     <div class="one">
-                      <img src="images/post_diff.png" width="170" alt="Diffusion deployment">
-                      <img class="two" src="images/post_diff.png" width="170" alt="">
+                      <img class="thumbimg" src="images/post_diff.png" alt="Diffusion deployment">
+                      <img class="two thumbimg" src="images/post_diff.png" alt="">
                     </div>
                   </td>
-                  <td style="width:75%;vertical-align:top;">
+                  <td class="textcell" style="width:75%;vertical-align:top;">
                     <papertitle>Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment</papertitle>
                     <br>
                     <a>Zhenbang Du</a>,
@@ -149,13 +155,13 @@
 
                 <!-- Pub C -->
                 <tr>
-                  <td style="width:25%;vertical-align:top;">
+                  <td class="thumbcell" style="width:25%;vertical-align:top;">
                     <div class="one">
-                      <img src="images/ISPASS25_EmbodiedPerf.png" width="170" alt="Embodied systems">
-                      <img class="two" src="images/ISPASS25_EmbodiedPerf.png" width="170" alt="">
+                      <img class="thumbimg" src="images/ISPASS25_EmbodiedPerf.png" alt="Embodied systems">
+                      <img class="two thumbimg" src="images/ISPASS25_EmbodiedPerf.png" alt="">
                     </div>
                   </td>
-                  <td style="width:75%;vertical-align:top;">
+                  <td class="textcell" style="width:75%;vertical-align:top;">
                     <papertitle>Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
@@ -176,13 +182,13 @@
 
                 <!-- Pub D -->
                 <tr>
-                  <td style="width:25%;vertical-align:top;">
+                  <td class="thumbcell" style="width:25%;vertical-align:top;">
                     <div class="one">
-                      <img src="images/ASPLOS25_ReCA.png" width="170" alt="ReCA">
-                      <img class="two" src="images/ASPLOS25_ReCA.png" width="170" alt="">
+                      <img class="thumbimg" src="images/ASPLOS25_ReCA.png" alt="ReCA">
+                      <img class="two thumbimg" src="images/ASPLOS25_ReCA.png" alt="">
                     </div>
                   </td>
-                  <td style="width:75%;vertical-align:top;">
+                  <td class="textcell" style="width:75%;vertical-align:top;">
                     <papertitle>ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents</papertitle>
                     <br>
                     <a href="https://zishenwan.github.io">Zishen Wan</a>,
@@ -203,13 +209,13 @@
 
                 <!-- Pub E -->
                 <tr>
-                  <td style="width:25%;vertical-align:top;">
+                  <td class="thumbcell" style="width:25%;vertical-align:top;">
                     <div class="one">
-                      <img src="images/amoeballm.png" width="170" alt="AmoebaLLM">
-                      <img class="two" src="images/amoeballm.png" width="170" alt="">
+                      <img class="thumbimg" src="images/amoeballm.png" alt="AmoebaLLM">
+                      <img class="two thumbimg" src="images/amoeballm.png" alt="">
                     </div>
                   </td>
-                  <td style="width:75%;vertical-align:top;">
+                  <td class="textcell" style="width:75%;vertical-align:top;">
                     <papertitle>AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment</papertitle>
                     <br>
                     <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
