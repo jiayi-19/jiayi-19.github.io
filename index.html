@@ -80,7 +80,81 @@
             <!-- Publications 列表 -->
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
               <tbody>
-
+              <tr onmouseout="ff_stop()" onmouseover="ff_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='ff_image'>
+                      <img src='images/ASPLOS26_NSAI.png' width="170"></div>
+                    <img src='images/ASPLOS26_NSAI.png' width="170">
+                  </div>
+                  <script type="text/javascript">
+                    function ff_start() {
+                      document.getElementById('ff_image').style.opacity = "1";
+                    }
+                    function ff_stop() {
+                      document.getElementById('ff_image').style.opacity = "0";
+                    }
+                    ff_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                      <papertitle>Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</papertitle>
+                  <br>
+                  <a href="https://zishenwan.github.io">Zishen Wan</a>,
+                  <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
+                  <strong>Jiayi Qian*</strong>,
+                  <a href="https://scholar.google.com/citations?user=I8kUcx4AAAAJ&hl=en">Ritik Raj</a>,
+                  <a href="https://sites.google.com/casys.kaist.ac.kr/jupark/">Joongun Park</a>,
+                  <a href="https://scholar.google.com/citations?user=QI96hfoAAAAJ&hl=en">Chenyu Wang</a>,
+                  <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
+                  <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
+                  <br>
+                  <em>ACM Inter Conf on Architectural Support for Programming Languages and Operating Systems (<strong>ASPLOS</strong>)</em>, 2026
+                  <br>Paper (To appear)
+                  <br>
+                  <p></p>
+                  <p>Compositional AI integrates LLMs, symbolic, and probabilistic modules to enhance interpretability, robustness, and trustworthiness for cognitive applications. This paper presents a comprehensive system-level analysis of neuro-symbolic-probabilistic AI and reveals its key performance characteristics.</p>
+                </td>
+                </tr> 
+                  <tr onmouseout="ff_stop()" onmouseover="ff_start()">
+                    <td style="padding:20px;width:25%;vertical-align:top">
+                      <!-- 如果你想在这个条目也用两张图叠加，可以照前面写法 -->
+                      <div class="one" style="display: flex; justify-content: space-around; align-items: flex-start;">
+                        <div class="two" id='ff_image'>
+                          <img src='images/post_diff.png' width="170">
+                        </div>
+                      </div>
+                      <script type="text/javascript">
+                        function ff_start() {
+                          document.getElementById('ff_image').style.opacity = "1";
+                        }
+                        function ff_stop() {
+                          document.getElementById('ff_image').style.opacity = "0";
+                        }
+                        ff_stop();
+                      </script>
+                    </td>
+                    <td style="padding:20px;width:75%;vertical-align:top">
+                      <papertitle>
+                        Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment
+                      </papertitle>
+                      <br>
+                      <a>Zhenbang Du</a>,
+                      <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
+                      <a>Lifu Wang</a>,
+                      <strong>Jiayi Qian*</strong>,
+                      <a>Xiao Luo*</a>,
+                      <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
+                      <br>
+                      <em>International Conference on Computer Vision
+                        (<strong>ICCV</strong>)</em>, 2025
+                      <br>
+                      <a href="https://arxiv.org/pdf/2508.06160">Paper</a> /
+                      <br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
                 <!-- Publication 1 -->
                 <tr onmouseout="ff_stop()" onmouseover="ff_start()">
                   <!-- 左侧单元格：改为 vertical-align: top -->
