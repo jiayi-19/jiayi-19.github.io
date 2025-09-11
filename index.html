@@ -14,7 +14,7 @@
       table { width: 100%; border-spacing: 0; }
 
       /* Hover overlay if you stack two images */
-      .one { position: relative; display: inline-block; }
+      .one { position: relative; display: inline-block; width:auto; height:auto; }
       .one .two { position: absolute; inset: 0; opacity: 0; transition: opacity .2s ease; }
       .one:hover .two { opacity: 1; }
 
@@ -28,17 +28,25 @@
       .thumbcell { padding-right: 6px !important; } /* reduce horizontal gap */
       .textcell  { padding-left: 6px !important; }  /* reduce horizontal gap */
 
-      /* Make pics a bit larger without moving text (column widths unchanged) */
-      .thumbimg { width: 200px; } /* was 170px; still fits inside the 25% column */
+      /* Publication thumbnail size (match reference layout) */
+      .thumbimg { width: 170px; }
       
       /* Slightly tighter section padding */
       .section-pad { padding: 12px 16px; }
+      
+      /* Visitors map half-size */
+      #visitors-map { text-align: center; }
+      #visitors-map .globe-scale {
+        display: inline-block;
+        transform: scale(0.5);
+        transform-origin: top center;
+      }
     </style>
   </head>
 
   <body>
     <!-- Outer container -->
-    <table style="max-width:1100px;border:0;border-collapse:separate;margin:0 auto;">
+    <table style="max-width:950px;border:0;border-collapse:separate;margin:0 auto;">
       <tbody>
         <tr>
           <td style="padding:0;">
@@ -47,7 +55,7 @@
               <tbody>
                 <tr>
                   <!-- Left: text -->
-                  <td style="padding:2.5%;width:63%;vertical-align:top;">
+                  <td style="padding:2.5%;width:67%;vertical-align:middle;">
                     <p class="name" style="text-align:center;">Jiayi Qian</p>
                     <p>
                       I'm now a first-year ECE Ph.D. student in 
@@ -71,14 +79,17 @@
                     </p>
                   </td>
 
-                  <!-- Right: photo -->
-                  <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:top;">
+                  <!-- Right: photo + email -->
+                  <td style="padding:2.5%;width:33%;max-width:40%;vertical-align:top;">
                     <a href="images/cat.png">
                       <img
                         style="width:100%;max-width:100%;object-fit:cover;border-radius:50%;"
                         alt="profile photo"
                         src="images/cat.png">
                     </a>
+                    <br>
+                    <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email:
+                    <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jiayiqian@gatech.edu</span>
                   </td>
                 </tr>
               </tbody>
@@ -89,7 +100,7 @@
               <tbody>
                 <tr>
                   <td class="section-pad" style="vertical-align:top;">
-                    <h2 style="margin: 0 0 8px;">Research</h2>
+                    <h2 style="margin: 0 0 8px;">Research Interests</h2>
                     <p style="margin:6px 0; line-height:1.35;">
                       I'm interested in efficient machine learning algorithm and system design along with hardware accelerator design.
                       I'm particularly interested in Embodied AI and Neuro-Symbolic AI systems.
