@@ -157,21 +157,23 @@
     /* ── Conference tag pills (Research Interests) ── */
     .conf-tag {
       display: inline-block;
-      background: #e8f0fe;
-      color: #1772d0;
       padding: 2px 10px;
       border-radius: 12px;
       font-size: 12px;
       font-weight: 600;
       text-decoration: none;
       margin: 1px 2px;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, color 0.2s, opacity 0.2s;
     }
 
-    .conf-tag:hover {
-      background: #1772d0;
-      color: #fff;
-    }
+    .conf-tag:hover { opacity: 0.75; }
+
+    /* Architecture: HPCA, ASPLOS, ISCA, Micro → purple */
+    .conf-arch { background: #ede9fe; color: #5b21b6; }
+    /* ML: NeurIPS, ICCV, ICML, ICLR, CVPR → rose/red */
+    .conf-ml   { background: #fce7f3; color: #9d174d; }
+    /* Systems: ISPASS, OSDI, NSDI, SC → green */
+    .conf-sys  { background: #d1fae5; color: #065f46; }
 
     /* Research interests list */
     .research-list {
@@ -380,17 +382,24 @@
       vertical-align: middle;
     }
 
-    /* Systems/Architecture venues */
-    .venue-hpca   { background: #fde8d8; color: #b94a00; }
+    /* Architecture venues (purple): HPCA, ASPLOS, ISCA, Micro */
+    .venue-hpca   { background: #ede9fe; color: #5b21b6; }
     .venue-asplos { background: #ede9fe; color: #5b21b6; }
-    .venue-ispass { background: #d1fae5; color: #065f46; }
+    .venue-isca   { background: #ede9fe; color: #5b21b6; }
+    .venue-micro  { background: #ede9fe; color: #5b21b6; }
 
-    /* ML venues */
-    .venue-neurips { background: #e0f2fe; color: #0c4a6e; }
+    /* ML venues (rose/red): NeurIPS, ICCV, ICML, ICLR, CVPR */
+    .venue-neurips { background: #fce7f3; color: #9d174d; }
     .venue-iccv    { background: #fce7f3; color: #9d174d; }
-    .venue-cvpr    { background: #fef3c7; color: #92400e; }
-    .venue-iclr    { background: #ecfdf5; color: #064e3b; }
-    .venue-icml    { background: #f0fdf4; color: #166534; }
+    .venue-icml    { background: #fce7f3; color: #9d174d; }
+    .venue-iclr    { background: #fce7f3; color: #9d174d; }
+    .venue-cvpr    { background: #fce7f3; color: #9d174d; }
+
+    /* Systems venues (green): ISPASS, OSDI, NSDI, SC */
+    .venue-ispass { background: #d1fae5; color: #065f46; }
+    .venue-osdi   { background: #d1fae5; color: #065f46; }
+    .venue-nsdi   { background: #d1fae5; color: #065f46; }
+    .venue-sc     { background: #d1fae5; color: #065f46; }
 
     /* ── Top accent bar ── */
     .top-bar {
@@ -499,22 +508,22 @@
                 <strong>Embodied AI</strong>
                 <span class="research-desc">&mdash; Algorithm, System, and Architecture for Embodied AI</span>
                 <br>
-                <a class="conf-tag" href="https://arxiv.org/pdf/2504.18945">ISPASS'25</a>
-                <a class="conf-tag" href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016">ASPLOS'25</a>
+                <a class="conf-tag conf-sys"  href="https://arxiv.org/pdf/2504.18945">ISPASS'25</a>
+                <a class="conf-tag conf-arch" href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016">ASPLOS'25</a>
               </li>
               <li>
                 <strong>Neuro-Symbolic AI</strong>
                 <span class="research-desc">&mdash; Architecture and System support for Neuro-Symbolic AI</span>
                 <br>
-                <a class="conf-tag" href="https://arxiv.org/pdf/2601.20784">HPCA'26</a>
-                <a class="conf-tag" href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235">ASPLOS'26</a>
+                <a class="conf-tag conf-arch" href="https://arxiv.org/pdf/2601.20784">HPCA'26</a>
+                <a class="conf-tag conf-arch" href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235">ASPLOS'26</a>
               </li>
               <li>
                 <strong>Efficient AI Algorithms</strong>
                 <span class="research-desc">&mdash; Compression and Efficient Inference for Generative Models</span>
                 <br>
-                <a class="conf-tag" href="https://arxiv.org/pdf/2508.06160">ICCV'25</a>
-                <a class="conf-tag" href="https://arxiv.org/abs/2411.10606">NeurIPS'24</a>
+                <a class="conf-tag conf-ml" href="https://arxiv.org/pdf/2508.06160">ICCV'25</a>
+                <a class="conf-tag conf-ml" href="https://arxiv.org/abs/2411.10606">NeurIPS'24</a>
               </li>
             </ul>
           </div>
@@ -750,12 +759,10 @@
             </ul>
           </div>
 
-          <div class="section-card" style="text-align:center;">
-            <div id="visitors-map">
-              <div class="globe-scale">
-                <script type='text/javascript' id='clustrmaps'
-                  src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=6zBsRIk3lu9rP_Ucu4ovqXcs1WA36-_Oa_G1acNTGh0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
-              </div>
+          <div id="visitors-map" style="text-align:center;margin-bottom:18px;">
+            <div class="globe-scale">
+              <script type='text/javascript' id='clustrmaps'
+                src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=6zBsRIk3lu9rP_Ucu4ovqXcs1WA36-_Oa_G1acNTGh0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
             </div>
           </div>
           <!-- Footer -->
