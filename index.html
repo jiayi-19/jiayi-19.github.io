@@ -61,10 +61,10 @@
 
     /* ── Header card ── */
     .header-card {
-      background: linear-gradient(135deg, #daeeff 0%, #e8f5ff 50%, #f0f9ff 100%);
+      background: #fff;
       border-radius: 14px;
-      border: 1px solid #b8d9f0;
-      box-shadow: 0 4px 20px rgba(90,163,217,0.10);
+      border: 1px solid #e8eaed;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05), 0 0 0 0.5px rgba(0,0,0,0.03);
       margin-bottom: 18px;
       overflow: hidden;
       position: relative;
@@ -95,7 +95,7 @@
     p.name {
       font-size: 26px !important;
       font-weight: 700 !important;
-      color: #0d3d6b !important;
+      color: #111 !important;
       letter-spacing: -0.02em;
       margin: 0 0 12px !important;
     }
@@ -103,23 +103,8 @@
     p.name .cn-name {
       font-size: 0.65em !important;
       font-weight: 500 !important;
-      opacity: 0.7;
-      color: #0d3d6b !important;
-    }
-
-    /* Header body text */
-    .header-card p:not(.name):not(.contact-links) {
-      color: #1a3a52;
-    }
-
-    .header-card p:not(.name):not(.contact-links) a {
-      color: #1772d0;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .header-card p:not(.name):not(.contact-links) a:hover {
-      color: #0d5baa;
+      opacity: 0.5;
+      color: #111 !important;
     }
 
     /* ── Contact links as pills ── */
@@ -127,20 +112,18 @@
       display: inline-block;
       padding: 6px 18px;
       margin: 3px 4px;
-      background: rgba(255,255,255,0.7);
+      background: #e8f0fe;
       color: #1772d0;
       border-radius: 20px;
       font-size: 13.5px;
       font-weight: 600;
-      border: 1px solid rgba(23,114,208,0.25);
-      backdrop-filter: blur(4px);
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      border: 1px solid transparent;
+      transition: background 0.2s, color 0.2s;
       text-decoration: none;
     }
 
     .contact-links a:hover {
       background: #1772d0;
-      border-color: #1772d0;
       color: #fff;
     }
 
@@ -150,8 +133,7 @@
       max-width: 100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid rgba(255,255,255,0.85);
-      box-shadow: 0 4px 16px rgba(23,114,208,0.18);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
     }
 
     /* ── Conference tag pills (Research Interests) ── */
