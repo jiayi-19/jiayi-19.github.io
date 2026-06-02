@@ -417,18 +417,11 @@
       text-align: center;
     }
 
-    #visitors-map .map-scale {
+    #visitors-map .globe-scale {
       display: inline-block;
-      width: 300px;
+      width: 400px;
       max-width: 100%;
       transform: none !important;
-    }
-
-    #visitors-map .map-scale img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 0;
     }
   </style>
 </head>
@@ -801,10 +794,9 @@
 
           <div id="visitors-map" style="text-align:center;margin-bottom:18px;">
             <h2 style="margin:0 0 8px;">Visitors</h2>
-            <div class="map-scale">
-              <img
-                src="https://clustrmaps.com/map_v2.png?cl=ffffff&w=a&t=tt&d=6zBsRIk3lu9rP_Ucu4ovqXcs1WA36-_Oa_G1acNTGh0&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"
-                alt="Visitor map">
+            <div class="globe-scale">
+              <script type="text/javascript" id="clstr_globe"
+                src="https://clustrmaps.com/globe.js?d=6zBsRIk3lu9rP_Ucu4ovqXcs1WA36-_Oa_G1acNTGh0"></script>
             </div>
           </div>
           <!-- Footer -->
