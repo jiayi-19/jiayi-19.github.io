@@ -143,7 +143,7 @@ h4 a { color: var(--ink); }
 .industry-card { display: grid; grid-template-columns: 165px minmax(0,1fr); gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .industry-card h4 { font-size: 22px; }
 .industry-meta { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 24px; }
-.company-logo { width: 110px; height: auto; }
+.company-logo { flex: none; width: 110px; height: auto; aspect-ratio: 544 / 184; object-fit: contain; }
 .site-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; padding: 33px 0 36px; border-top: 1px solid var(--line); }
 .site-footer > div { display: flex; flex-direction: column; gap: 8px; }
 .site-footer a { font-size: 13px; }
