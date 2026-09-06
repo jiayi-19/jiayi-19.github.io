@@ -1,808 +1,229 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Jiayi Qian</title>
-  <meta name="author" content="Jiayi Qian (钱家熠)">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="bNBA0qiJv70cy2klW2Q1F4kdn8U1GilCya2gvf1qlIs" />
-  <link rel="shortcut icon" href="images/favicon/dota2.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Jiayi Qian | AI Systems &amp; Computer Architecture</title>
+  <meta name="author" content="Jiayi Qian (钱家熠)">
+  <meta name="description" content="Jiayi Qian is an ECE Ph.D. student at Georgia Tech, researching efficient systems and architectures for emerging AI and AI-driven computer architecture and systems design.">
+  <meta name="google-site-verification" content="bNBA0qiJv70cy2klW2Q1F4kdn8U1GilCya2gvf1qlIs">
+  <meta name="theme-color" content="#f8faff">
+  <link rel="canonical" href="https://jiayi-19.github.io/">
+  <link rel="icon" href="images/favicon/dota2.ico" type="image/x-icon">
+  <link rel="stylesheet" href="homepage.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* ── Base ── */
-    body {
-      background: #f0f2f5;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    body, td, th, tr, p, a {
-      font-size: 15px;
-      line-height: 1.65;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    strong {
-      font-size: 15px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    table {
-      width: 100%;
-      border-spacing: 0;
-    }
-
-    /* ── Section headings ── */
-    h2 {
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: -0.01em;
-      padding-left: 14px;
-      border-left: 4px solid #1772d0;
-      color: #111;
-    }
-
-    /* ── Section cards ── */
-    .section-card {
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid #e8eaed;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05), 0 0 0 0.5px rgba(0,0,0,0.03);
-      padding: 26px 30px;
-      margin-bottom: 18px;
-    }
-
-    /* ── Header card ── */
-    .header-card {
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid #e8eaed;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05), 0 0 0 0.5px rgba(0,0,0,0.03);
-      margin-bottom: 18px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* subtle decorative circles in header */
-    .header-card::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
-      pointer-events: none;
-    }
-
-    .header-card::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: 30%;
-      width: 280px; height: 280px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      pointer-events: none;
-    }
-
-    /* ── Name in header ── */
-    p.name {
-      font-size: 26px !important;
-      font-weight: 700 !important;
-      color: #111 !important;
-      letter-spacing: -0.02em;
-      margin: 0 0 12px !important;
-    }
-
-    p.name .cn-name {
-      font-size: 0.65em !important;
-      font-weight: 500 !important;
-      opacity: 0.5;
-      color: #111 !important;
-    }
-
-    /* ── Contact links as pills ── */
-    .contact-links a {
-      display: inline-block;
-      padding: 6px 18px;
-      margin: 3px 4px;
-      background: #e8f0fe;
-      color: #1772d0;
-      border-radius: 20px;
-      font-size: 13.5px;
-      font-weight: 600;
-      border: 1px solid transparent;
-      transition: background 0.2s, color 0.2s;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      background: #1772d0;
-      color: #fff;
-    }
-
-    /* ── Profile photo ── */
-    .profile-photo {
-      width: 100%;
-      max-width: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-    }
-
-    /* ── Conference tag pills (Research Interests) ── */
-    .conf-tag {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      margin: 1px 2px;
-      transition: background 0.2s, color 0.2s, opacity 0.2s;
-    }
-
-    .conf-tag:hover { opacity: 0.75; }
-
-    /* Architecture: HPCA, ASPLOS, ISCA, Micro → purple */
-    .conf-arch { background: #ede9fe; color: #5b21b6; }
-    /* ML: NeurIPS, ICCV, ICML, ICLR, CVPR → rose/red */
-    .conf-ml   { background: #fce7f3; color: #9d174d; }
-    /* Systems: ISPASS, OSDI, NSDI, SC → green */
-    .conf-sys  { background: #d1fae5; color: #065f46; }
-
-    /* Research interests list */
-    .research-list {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0 0;
-    }
-
-    .research-list > li {
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .research-list > li:last-child {
-      border-bottom: none;
-    }
-
-    .research-desc {
-      color: #555;
-      font-size: 14px;
-      margin-left: 4px;
-    }
-
-    /* ── News ── */
-    .news-scroll {
-      height: 220px;
-      overflow-y: auto;
-      scrollbar-width: thin;
-      scrollbar-color: #c0c0c0 transparent;
-    }
-
-    .news-scroll::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .news-scroll::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .news-scroll::-webkit-scrollbar-thumb {
-      background: #c0c0c0;
-      border-radius: 3px;
-    }
-
-    .news-scroll ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .news-scroll li {
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f0f0;
-      line-height: 1.5;
-    }
-
-    .news-scroll li:last-child {
-      border-bottom: none;
-    }
-
-    .news-date {
-      display: inline-block;
-      background: #f0f0f0;
-      color: #555;
-      padding: 1px 8px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-right: 4px;
-    }
-
-    .news-tag {
-      display: inline-block;
-      background: #e6f4ea;
-      color: #1e7e34;
-      padding: 1px 8px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-right: 4px;
-    }
-
-    /* ── Chinese name ── */
-    .name .cn-name {
-      font-size: 1em;
-      font-weight: inherit;
-      margin-left: 0.25em;
-    }
-
-    /* ── Publications ── */
-
-    /* Hover overlay + fixed thumb frame */
-    .one {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      width: 180px;
-      height: 130px;
-    }
-
-    .one .two {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity .2s ease;
-    }
-
-    .one:hover .two {
-      opacity: 1;
-    }
-
-    .thumbimg {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: top center;
-      display: block;
-    }
-
-    .pubs td {
-      padding: 14px 12px;
-      vertical-align: top;
-    }
-
-    .pubs tr {
-      border-bottom: 1px solid #eee;
-      transition: background 0.15s;
-    }
-
-    .pubs tr:last-child {
-      border-bottom: none;
-    }
-
-    .pubs tr:hover {
-      background: #f8f9fb;
-    }
-
-    .pubs papertitle {
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .pubs em {
-      display: inline;
-      margin: 0;
-    }
-
-    .pubs p {
-      margin: 4px 0;
-      line-height: 1.4;
-    }
-
-    .thumbcell {
-      padding-right: 8px !important;
-    }
-
-    .textcell {
-      padding-left: 8px !important;
-    }
-
-    /* Paper action links as pills */
-    .paper-links a {
-      display: inline-block;
-      padding: 3px 12px;
-      margin: 2px 3px 2px 0;
-      background: #e8f0fe;
-      color: #1772d0;
-      border-radius: 14px;
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .paper-links a:hover {
-      background: #1772d0;
-      color: #fff;
-    }
-
-    /* Award badge */
-    .award {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: #b45309;
-      background: #fef3c7;
-      border: 1px solid #fde68a;
-      font-weight: 600;
-      font-size: 12px;
-      padding: 2px 10px;
-      border-radius: 12px;
-      margin-top: 4px;
-    }
-
-    /* ── Venue badge ── */
-    .venue-badge {
-      display: inline-block;
-      padding: 2px 9px;
-      border-radius: 10px;
-      font-size: 11.5px;
-      font-weight: 700;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
-
-    /* Architecture venues (purple): HPCA, ASPLOS, ISCA, Micro */
-    .venue-hpca   { background: #ede9fe; color: #5b21b6; }
-    .venue-asplos { background: #ede9fe; color: #5b21b6; }
-    .venue-isca   { background: #ede9fe; color: #5b21b6; }
-    .venue-micro  { background: #ede9fe; color: #5b21b6; }
-
-    /* ML venues (rose/red): NeurIPS, ICCV, ICML, ICLR, CVPR */
-    .venue-neurips { background: #fce7f3; color: #9d174d; }
-    .venue-iccv    { background: #fce7f3; color: #9d174d; }
-    .venue-icml    { background: #fce7f3; color: #9d174d; }
-    .venue-iclr    { background: #fce7f3; color: #9d174d; }
-    .venue-cvpr    { background: #fce7f3; color: #9d174d; }
-
-    /* Systems venues (green): ISPASS, OSDI, NSDI, SC */
-    .venue-ispass { background: #d1fae5; color: #065f46; }
-    .venue-osdi   { background: #d1fae5; color: #065f46; }
-    .venue-nsdi   { background: #d1fae5; color: #065f46; }
-    .venue-sc     { background: #d1fae5; color: #065f46; }
-
-    /* ── Top accent bar ── */
-    .top-bar {
-      height: 4px;
-      background: linear-gradient(90deg, #1772d0, #6366f1, #06b6d4);
-      border-radius: 0 0 4px 4px;
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 999;
-    }
-
-    /* ── Publication paper title ── */
-    .pubs papertitle {
-      font-size: 15px;
-      font-weight: 600;
-      color: #111;
-      line-height: 1.4;
-    }
-
-    /* ── Teaching tidy ── */
-    .section-card ul li {
-      padding: 6px 0;
-      border-bottom: 1px solid #f0f2f5;
-      color: #333;
-    }
-
-    .section-card ul li:last-child {
-      border-bottom: none;
-    }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-  <div class="top-bar"></div>
-  <!-- Outer container -->
-  <table style="max-width:950px;border:0;border-collapse:separate;margin:0 auto;padding:28px 16px 20px;">
-    <tbody>
-      <tr>
-        <td style="padding:0;">
-          <!-- Header -->
-          <div class="header-card">
-            <table style="border:0;border-collapse:separate;margin:0 auto;">
-              <tbody>
-                <tr>
-                  <!-- Left: text -->
-                  <td style="padding:2.5%;width:67%;vertical-align:top;">
-                    <p class="name" style="text-align:center;">Jiayi Qian <span class="cn-name" lang="zh">(钱家熠)</span></p>
-                    <p>
-                      I'm now a first-year ECE Ph.D. student in
-                      <a href="https://synergy.ece.gatech.edu/">Synergy Lab</a> at
-                      <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, advised by
-                      <a href="https://tusharkrishna.ece.gatech.edu/">Prof. Tushar Krishna</a> on efficient compositional
-                      AI systems and ML accelerator design.
-                    </p>
-                    <p>
-                      Prior to that, I obtained my M.S. degree in Computer Science, also from
-                      <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, where I worked with
-                      <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Prof. Yingyan (Celine) Lin</a> on
-                      efficient ML algorithms.
-                      I received my Bachelor's degree in Electronic Engineering from
-                      <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, advised by Prof. Gang Liu on
-                      visual SLAM.
-                    </p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#about" aria-label="Jiayi Qian, home">jq<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a>
+        <a class="nav-cv" href="data/CV_jiayi.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+    <section class="hero" id="about" aria-labelledby="name">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Georgia Tech · Electrical &amp; Computer Engineering</p>
+        <h1 id="name">Jiayi Qian<span class="name-dot">.</span></h1>
+        <p class="name-chinese" lang="zh">钱家熠 <span lang="en">/ ECE Ph.D. student</span></p>
+        <p class="bio-lead">I work at the intersection of <strong>AI systems</strong> and <strong>computer architecture</strong>.</p>
+        <p>I'm a Ph.D. student at the <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, working on efficient computing for emerging AI and AI-driven architecture and systems design.</p>
+        <p class="advisor-line">Advised by <a href="https://tusharkrishna.ece.gatech.edu/">Prof. Tushar Krishna <span aria-hidden="true">↗</span></a> and <a href="https://zishenwan.github.io/">Prof. Zishen Wan <span aria-hidden="true">↗</span></a>.</p>
+        <div class="contact-links" aria-label="Contact and profiles">
+          <a class="button-primary" href="mailto:jiayiqian@gatech.edu">Email <span aria-hidden="true">↗</span></a>
+          <a href="https://scholar.google.com/citations?user=-yGPXHkAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/jiayi-qian-988848294/">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <figure class="profile"><div class="photo-frame">
+        <a href="images/cat.png" aria-label="View the cat photo"><img src="images/cat.png" alt="A fluffy cat with bright blue eyes" width="1024" height="1024" fetchpriority="high"></a>
+        <span class="photo-corner" aria-hidden="true">↗</span>
+      </div><figcaption><span aria-hidden="true">✳</span> A little curiosity goes a long way.</figcaption></figure>
+    </section>
+    <section class="research section" id="research" aria-labelledby="research-title">
+      <div class="section-heading"><p class="eyebrow">01 / Research interests</p><h2 id="research-title">AI &amp; systems.<br><span class="muted">In both directions.</span></h2><p>I study how to make emerging AI efficient, and how AI can help us design better computing systems.</p></div>
+      <div class="research-directions">
+        <article class="direction direction-systems">
+          <div class="direction-top"><span class="direction-label">Systems for AI</span><span class="direction-arrow" aria-hidden="true">↗</span></div>
+          <h3>Efficient Systems and Architectures for Emerging AI</h3>
+          <p>System and architecture co-design for agentic, embodied, and neuro-symbolic AI: from serving and workload characterization to hardware acceleration.</p>
+          <ul class="topic-tags" aria-label="Research topics"><li>Agentic AI</li><li>Embodied AI</li><li>Neuro-Symbolic AI</li></ul>
+          <a class="direction-link" href="#publications" data-research-filter="systems">Explore related work <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="direction direction-design">
+          <div class="direction-top"><span class="direction-label">AI for systems</span><span class="direction-arrow" aria-hidden="true">↙</span></div>
+          <h3>AI-Driven Computer Architecture and Systems Design</h3>
+          <p>Using AI to guide the design of computer architectures and systems, including agent-driven exploration of accelerator designs.</p>
+          <ul class="topic-tags" aria-label="Research topics"><li>AI for Architecture</li><li>Design Space Exploration</li></ul>
+          <a class="direction-link" href="#publications" data-research-filter="design">Explore related work <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+    <section class="news section" id="news" aria-labelledby="news-title">
+      <div class="section-heading"><p class="eyebrow">02 / Updates</p><h2 id="news-title">Recently.</h2></div>
+      <div class="news-content"><ul class="news-list"><li><span class="news-date">May. 2026</span> <span class="news-tag">Paper</span> Our work <strong>DyServe</strong> was accepted to <strong>SCALE @ ICML 2026</strong> and <strong>Architecture 2.0 @ ISCA 2026</strong>.</li>
+<li><span class="news-date">Feb. 2026</span> <span class="news-tag">Paper</span> Our work <strong>Towards System-2 AI</strong> was accepted to <strong>ISPASS 2026</strong>.</li>
+<li><span class="news-date">Nov. 2025</span> <span class="news-tag">Paper</span> Our work <strong>REASON</strong> was accepted to <strong>HPCA 2026</strong>.</li></ul>
+        <details class="news-archive"><summary>Earlier updates <span aria-hidden="true">+</span></summary><ul class="news-list"><li><span class="news-date">Aug. 2025</span> I started my Ph.D. at Georgia Tech <strong>Synergy Lab</strong>, advised by <a href="https://tusharkrishna.ece.gatech.edu/">Prof. Tushar Krishna</a>.</li>
+<li><span class="news-date">Jun. 2025</span> <span class="news-tag">Paper</span> Our work on diffusion model deployment was accepted to <strong>ICCV 2025</strong>.</li>
+<li><span class="news-date">Jun. 2025</span> <span class="news-tag">Paper</span> Our work <strong>Compositional AI Beyond LLMs</strong> was accepted to <strong>ASPLOS 2026</strong>.</li>
+<li><span class="news-date">May. 2025</span> I received my M.S. degree in Computer Science from Georgia Tech.</li>
+<li><span class="news-date">Mar. 2025</span> <span class="news-tag">Paper</span> Our work <a href="https://arxiv.org/pdf/2504.18945"> <strong>Generative AI in Embodied Systems</strong> </a> was accepted to <strong>ISPASS 2025</strong>.</li>
+<li><span class="news-date">Feb. 2025</span> <span class="news-tag">Paper</span> Our work <a href="https://dl.acm.org/doi/abs/10.1145/3676641.3716016"> <strong>ReCA</strong> </a> on cooperative embodied AI was accepted to <strong>ASPLOS 2025</strong>.</li>
+<li><span class="news-date">Sep. 2024</span> <span class="news-tag">Paper</span> Our work <a href="https://arxiv.org/abs/2411.10606"> <strong>AmoebaLLM</strong> </a> on efficient LLM deployment was accepted to <strong>NeurIPS 2024</strong>.</li></ul></details>
+      </div>
+    </section>
+    <section class="publications section" id="publications" aria-labelledby="publications-title">
+      <div class="publication-heading"><div><p class="eyebrow">03 / Publications &amp; ongoing work</p><h2 id="publications-title">From ideas to systems.</h2></div><a class="text-link" href="https://scholar.google.com/citations?user=-yGPXHkAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a></div>
+      <div class="publication-toolbar">
+        <div class="paper-filters" role="group" aria-label="Filter research by topic" hidden>
+          <button type="button" data-filter="all" aria-pressed="true" aria-controls="published-papers ongoing-work">All work</button>
+          <button type="button" data-filter="systems" aria-pressed="false" aria-controls="published-papers ongoing-work">Systems for AI</button>
+          <button type="button" data-filter="design" aria-pressed="false" aria-controls="published-papers ongoing-work">AI for systems</button>
+          <button type="button" data-filter="models" aria-pressed="false" aria-controls="published-papers ongoing-work">Efficient models</button>
+        </div><span class="contribution-note">* Equal contribution</span>
+      </div>
+      <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
+      <div id="published-papers">        <article class="paper" id="dyserve" data-topic="systems">
+          <a class="paper-image" href="https://arxiv.org/pdf/2607.02942" aria-label="Read DyServe: A Workflow-Aware Serving Layer for Agentic Applications">
+            <img src="images/ATC26_Dyserve.png" alt="DyServe: A Workflow-Aware Serving Layer for Agentic Applications — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">SCALE @ ICML 2026 · Workshop</span><span class="venue">Architecture 2.0 @ ISCA 2026 · Workshop</span></div>
+            <h3><a href="https://arxiv.org/pdf/2607.02942">DyServe: A Workflow-Aware Serving Layer for Agentic Applications</a></h3>
+            <p class="authors"><strong>Jiayi Qian</strong>, <a href="https://zishenwan.github.io/">Zishen Wan</a>, <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&amp;hl=en">Hanchen Yang</a>, Chun Tao, <a href="https://ksouvik52.github.io/">Souvik Kundu</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a></p>
 
-                    <p class="contact-links" style="text-align:center">
-                      <a href="mailto:jiayiqian@gatech.edu">Email</a>
-                      <a href="data/CV_jiayi.pdf" target="_blank" rel="noopener">CV</a>
-                      <a href="https://scholar.google.com/citations?user=-yGPXHkAAAAJ&hl=en">Google Scholar</a>
-                      <a href="https://www.linkedin.com/in/jiayi-qian-988848294/">LinkedIn</a>
-                    </p>
-                  </td>
-
-                  <!-- Right: photo -->
-                  <td style="padding:2.5%;width:33%;max-width:40%;vertical-align:top;">
-                    <a href="images/cat.png">
-                      <img class="profile-photo" alt="profile photo" src="images/cat.png">
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="paper-links"><a href="https://arxiv.org/pdf/2607.02942">Paper<span aria-hidden="true"> ↗</span></a></div>
           </div>
+        </article>
 
-          <!-- Research Interests -->
-          <div class="section-card">
-            <h2 style="margin:0 0 10px;">Research Interests</h2>
-            <p style="margin:6px 0 0; line-height:1.5;">
-              I'm interested in efficient machine learning algorithms and system design, along with hardware
-              accelerator design.
-              I'm particularly interested in Agentic AI, Embodied AI and Neuro-Symbolic AI systems.
-            </p>
-            <ul class="research-list">
-              <li>
-                <strong>Efficient ML Algorithms</strong>
-                <span class="research-desc">&mdash; Compression and Efficient Inference for Generative Models</span>
-                <br>
-                <a class="conf-tag conf-ml" href="https://arxiv.org/pdf/2508.06160">ICCV'25</a>
-                <a class="conf-tag conf-ml" href="https://arxiv.org/abs/2411.10606">NeurIPS'24</a>
-              </li>
-              <li>
-                <strong>ML Systems</strong>
-                <span class="research-desc">&mdash; System-Level Analysis and Serving for Generative / Agentic AI</span>
-                <br>
-                <a class="conf-tag conf-ml">SCALE@ICML'26</a>
-                <a class="conf-tag conf-sys" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11527268">ISPASS'26</a>
-                <a class="conf-tag conf-sys" href="https://arxiv.org/pdf/2504.18945">ISPASS'25</a>
-              </li>
-              <li>
-                <strong>ML Accelerator Architecture</strong>
-                <span class="research-desc">&mdash; Hardware Accelerator Design for Embodied AI and Neuro-Symbolic AI</span>
-                <br>
-                <a class="conf-tag conf-arch" href="https://arxiv.org/pdf/2601.20784">HPCA'26</a>
-                <a class="conf-tag conf-arch" href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235">ASPLOS'26</a>
-                <a class="conf-tag conf-arch" href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016">ASPLOS'25</a>
-              </li>
-            </ul>
+        <article class="paper" id="reason" data-topic="systems">
+          <a class="paper-image" href="https://arxiv.org/pdf/2601.20784" aria-label="Read REASON: Accelerating Probabilistic Logical Reasoning for Neuro-Symbolic AI">
+            <img src="images/HPCA26_REASON.png" alt="REASON: Accelerating Probabilistic Logical Reasoning for Neuro-Symbolic AI — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">HPCA 2026</span></div>
+            <h3><a href="https://arxiv.org/pdf/2601.20784">REASON: Accelerating Probabilistic Logical Reasoning for Neuro-Symbolic AI</a></h3>
+            <p class="authors"><a href="https://zishenwan.github.io/">Zishen Wan</a>, <a href="https://scholar.google.com/citations?user=_zZGO-4AAAAJ&amp;hl=en">Che-Kai Liu</a>, <strong>Jiayi Qian</strong>, <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&amp;hl=en">Hanchen Yang</a>, <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&amp;hl=en">Arijit Raychowdhury</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a></p>
+
+            <div class="paper-links"><a href="https://arxiv.org/pdf/2601.20784">Paper<span aria-hidden="true"> ↗</span></a><a href="https://zishenwan.github.io/publication/2026-02-03_REASON_HPCA_Talk.pdf">Slide<span aria-hidden="true"> ↗</span></a><a href="https://www.youtube.com/watch?v=QEvep7tzxMs">Talk<span aria-hidden="true"> ↗</span></a><a href="https://effi-nesy.github.io/">Tutorial<span aria-hidden="true"> ↗</span></a></div>
           </div>
+        </article>
 
-          <!-- News -->
-          <div class="section-card">
-            <h2 style="margin:0 0 10px;">News</h2>
-            <div class="news-scroll">
-              <ul>
-                <li><span class="news-date">May. 2026</span> <span class="news-tag">Paper</span> Our work <papertitle>Dyserve</papertitle> accepted to <strong>SCALE @ ICML 2026</strong> and <strong>Architecture 2.0 @ ISCA 2026</strong>.</li>
-                <li><span class="news-date">Feb. 2026</span> <span class="news-tag">Paper</span> Our work <papertitle>Towards System-2 AI</papertitle> accepted to <strong>ISPASS 2026</strong>.</li>
-                <li><span class="news-date">Nov. 2025</span> <span class="news-tag">Paper</span> Our work <papertitle>REASON</papertitle>
-                  accepted to <strong>HPCA 2026</strong>.</li>
-                <li><span class="news-date">Aug. 2025</span> I start my Ph.D. at Georgia Tech <strong>Synergy Lab</strong>, advised by <a
-                    href="https://tusharkrishna.ece.gatech.edu/">Prof. Tushar Krishna</a>.</li>
-                <li><span class="news-date">Jun. 2025</span> <span class="news-tag">Paper</span> Our work on diffusion model deployment accepted to
-                  <strong>ICCV 2025</strong>.</li>
-                <li><span class="news-date">Jun. 2025</span> <span class="news-tag">Paper</span> Our work <papertitle>Compositional AI Beyond
-                    LLMs</papertitle> accepted to <strong>ASPLOS 2026</strong>.</li>
-                <li><span class="news-date">May. 2025</span> I receive my M.S. degree in Computer Science from Georgia Tech.</li>
-                <li><span class="news-date">Mar. 2025</span> <span class="news-tag">Paper</span> Our work <a
-                    href="https://arxiv.org/pdf/2504.18945">
-                    <papertitle>Generative AI in Embodied Systems</papertitle>
-                  </a> accepted to <strong>ISPASS 2025</strong>.</li>
-                <li><span class="news-date">Feb. 2025</span> <span class="news-tag">Paper</span> Our work <a
-                    href="https://dl.acm.org/doi/abs/10.1145/3676641.3716016">
-                    <papertitle>ReCA</papertitle>
-                  </a> on cooperative embodied AI accepted to <strong>ASPLOS 2025</strong>.</li>
-                <li><span class="news-date">Sep. 2024</span> <span class="news-tag">Paper</span> Our work <a
-                    href="https://arxiv.org/abs/2411.10606">
-                    <papertitle>AmoebaLLM</papertitle>
-                  </a> on efficient LLM deployment accepted to <strong>NeurIPS 2024</strong>.</li>
-              </ul>
+        <article class="paper" id="system-2" data-topic="systems">
+          <a class="paper-image" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11527268" aria-label="Read Towards System-2 AI: Workloads and Characterizations of Energy-Based Models">
+            <img src="images/ISPASS26_EBM.png" alt="Towards System-2 AI: Workloads and Characterizations of Energy-Based Models — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">ISPASS 2026</span></div>
+            <h3><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11527268">Towards System-2 AI: Workloads and Characterizations of Energy-Based Models</a></h3>
+            <p class="authors"><a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&amp;hl=en">Hanchen Yang</a>, <strong>Jiayi Qian</strong>, <a href="https://zishenwan.github.io/">Zishen Wan</a>, <a href="https://scholar.google.com/citations?user=e5yfa28AAAAJ&amp;hl=en">Jingtian Dang</a>, <a href="https://www.linkedin.com/in/ziwei-li-gt/">Ziwei Li</a>, <a href="https://yilundu.github.io">Yilun Du</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a></p>
+
+            <div class="paper-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11527268">Paper<span aria-hidden="true"> ↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="paper" id="compositional-ai" data-topic="systems">
+          <a class="paper-image" href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235" aria-label="Read Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures">
+            <img src="images/ASPLOS26_NSAI.png" alt="Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">ASPLOS 2026</span></div>
+            <h3><a href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235">Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic Architectures</a></h3>
+            <p class="authors"><a href="https://zishenwan.github.io/">Zishen Wan</a>, <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&amp;hl=en">Hanchen Yang</a>, <strong>Jiayi Qian</strong>, <a href="https://scholar.google.com/citations?user=I8kUcx4AAAAJ&amp;hl=en">Ritik Raj</a>, <a href="https://sites.google.com/casys.kaist.ac.kr/jupark/">Joongun Park</a>, <a href="https://scholar.google.com/citations?user=QI96hfoAAAAJ&amp;hl=en">Chenyu Wang</a>, <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&amp;hl=en">Arijit Raychowdhury</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a></p>
+            <p class="award">🏆 Best Paper Award, DARPA SRC JUMP 2.0, 2025</p>
+            <div class="paper-links"><a href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235">Paper<span aria-hidden="true"> ↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="paper" id="diffusion" data-topic="models">
+          <a class="paper-image" href="https://arxiv.org/pdf/2508.06160" aria-label="Read Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment">
+            <img src="images/post_diff.png" alt="Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">ICCV 2025</span></div>
+            <h3><a href="https://arxiv.org/pdf/2508.06160">Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment</a></h3>
+            <p class="authors">Zhenbang Du*, <a href="https://www.yongganfu.com/">Yonggan Fu*</a>, Lifu Wang*, <strong>Jiayi Qian</strong>, Xiao Luo, <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a></p>
+
+            <div class="paper-links"><a href="https://arxiv.org/pdf/2508.06160">Paper<span aria-hidden="true"> ↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="paper" id="embodied-systems" data-topic="systems">
+          <a class="paper-image" href="https://arxiv.org/pdf/2504.18945" aria-label="Read Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability">
+            <img src="images/ISPASS25_EmbodiedPerf.png" alt="Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">ISPASS 2025</span></div>
+            <h3><a href="https://arxiv.org/pdf/2504.18945">Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability</a></h3>
+            <p class="authors"><a href="https://zishenwan.github.io/">Zishen Wan</a>, <strong>Jiayi Qian</strong>, Yuhang Du, <a href="http://jabbourjason.com">Jason Jabbour</a>, <a href="https://yilundu.github.io">Yilun Du</a>, <a href="https://www.yangkatiezhao.net">Yang Zhao</a>, <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&amp;hl=en">Arijit Raychowdhury</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a>, <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&amp;hl=en">Vijay Janapa Reddi</a></p>
+
+            <div class="paper-links"><a href="https://arxiv.org/pdf/2504.18945">Paper<span aria-hidden="true"> ↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="paper" id="reca" data-topic="systems">
+          <a class="paper-image" href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016" aria-label="Read ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents">
+            <img src="images/ASPLOS25_ReCA.png" alt="ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">ASPLOS 2025</span></div>
+            <h3><a href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016">ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents</a></h3>
+            <p class="authors"><a href="https://zishenwan.github.io/">Zishen Wan</a>, Yuhang Du, <a href="https://mohamed-s-ibrahim.github.io">Mohamed Ibrahim</a>, <strong>Jiayi Qian</strong>, <a href="http://jabbourjason.com">Jason Jabbour</a>, <a href="https://www.yangkatiezhao.net">Yang Zhao</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a>, <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&amp;hl=en">Arijit Raychowdhury</a>, <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&amp;hl=en">Vijay Janapa Reddi</a></p>
+            <p class="award">⭐ Selected as Industry-Academia Partnership (IAP) Highlight</p>
+            <div class="paper-links"><a href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016">Paper<span aria-hidden="true"> ↗</span></a><a href="https://zishenwan.github.io/publication/2025-04-02_ASPLOS25_ReCA_slide.pdf">Slide<span aria-hidden="true"> ↗</span></a><a href="https://docs.google.com/presentation/d/1qnYi0ZFcN51e6u8QLhAqyv_bZt_xWSfQOVxnkDSfuiM/edit?usp=sharing">Slide (long)<span aria-hidden="true"> ↗</span></a><a href="https://zishenwan.github.io/publication/ASPLOS25_ReCA_Poster.pdf">Poster<span aria-hidden="true"> ↗</span></a><a href="https://mp.weixin.qq.com/s/bnFKClWl0NyB0hIclxmwvQ">Media<span aria-hidden="true"> ↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="paper" id="amoeballm" data-topic="models">
+          <a class="paper-image" href="https://arxiv.org/abs/2411.10606" aria-label="Read AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment">
+            <img src="images/amoeballm.png" alt="AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment — research overview" loading="lazy" width="480" height="300">
+          </a>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">NeurIPS 2024</span></div>
+            <h3><a href="https://arxiv.org/abs/2411.10606">AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant Deployment</a></h3>
+            <p class="authors"><a href="https://www.yongganfu.com/">Yonggan Fu</a>, <a href="https://yuzz1020.github.io/">Zhongzhi Yu*</a>, <a href="https://www.linkedin.com/in/junwei-li-50b176197/">Junwei Li*</a>, <strong>Jiayi Qian*</strong>, <a href="https://www.linkedin.com/in/yongan-zhang-141a71136/">Yongan Zhang</a>, <a href="https://dachuanshi.com/">Dachuan Shi</a>, <a href="https://xiangchi-yuan.github.io/">Xiangchi Yuan</a>, <a href="https://www.linkedin.com/in/ryakunin/">Roman Yakunin</a>, <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a></p>
+
+            <div class="paper-links"><a href="https://arxiv.org/abs/2411.10606">Paper<span aria-hidden="true"> ↗</span></a></div>
+          </div>
+        </article></div>
+      <div id="ongoing-work" class="ongoing-work"><div class="ongoing-heading"><h3>Work in progress</h3><p>Submissions currently under review.</p></div>          <article class="paper manuscript" id="fast-aips" data-topic="systems">
+            <div class="manuscript-marker" aria-hidden="true">01<span>IN PROGRESS</span></div>
+            <div class="paper-content"><p class="review-status">Under review · HPCA 2027 submission</p>
+              <h3>Fast-AIPS: Integrated Acceleration for Efficient Compositional AI Planning Systems</h3><p class="authors"><strong>Jiayi Qian</strong>, <a href="https://zishenwan.github.io/">Zishen Wan</a>, Zheng Du, <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&amp;hl=en">Hanchen Yang</a>, Ananda Samajdar, <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&amp;hl=en">Arijit Raychowdhury</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a></p>
             </div>
-          </div>
-
-          <!-- Publications -->
-          <div class="section-card">
-            <h2 style="margin:0 0 4px;display:inline;">Selected Publications</h2>
-            <span style="font-size:13px;color:#777;">&nbsp;&nbsp;(*: Equal Contributions)</span>
-
-            <table class="pubs" style="border:0;border-collapse:collapse;margin:16px auto 0;">
-              <tbody>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/ATC26_Dyserve.png" alt="Dyserve">
-                      <img class="two thumbimg" src="images/ATC26_Dyserve.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>Dyserve: A Workflow-Aware Serving Layer for Agentic Applications</papertitle>
-                    <br>
-                    <strong>Jiayi Qian</strong>,
-                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                    <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
-                    <a href="https://ksouvik52.github.io/">Souvik Kundu</a>,
-                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
-                    <br>
-                    <span class="venue-badge venue-icml">SCALE @ ICML 2026</span>
-                    <span class="venue-badge venue-isca">Architecture 2.0 @ ISCA 2026</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://arxiv.org/pdf/2607.02942">Paper</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/HPCA26_REASON.png" alt="REASON">
-                      <img class="two thumbimg" src="images/HPCA26_REASON.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>REASON: Accelerating Probabilistic Logical Reasoning for Neuro-Symbolic Cognitive
-                      Intelligence</papertitle>
-                    <br>
-                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                    <a href="https://scholar.google.com/citations?user=_zZGO-4AAAAJ&hl=en">Che-Kai Liu</a>,
-                    <strong>Jiayi Qian</strong>,
-                    <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
-                    <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
-                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
-                    <br>
-                    <span class="venue-badge venue-hpca">HPCA 2026</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://arxiv.org/pdf/2601.20784">Paper</a>
-                      <a href="publication/2026-02-03_REASON_HPCA_Talk.pdf">Slide</a>
-                      <a href="https://www.youtube.com/watch?v=QEvep7tzxMs">Talk</a>
-                      <a href="https://effi-nesy.github.io/">Tutorial</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/ISPASS26_EBM.png" alt="Towards System-2 AI">
-                      <img class="two thumbimg" src="images/ISPASS26_EBM.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>Towards System-2 AI: Workloads and Characterizations of Energy-Based Models</papertitle>
-                    <br>
-                    <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
-                    <strong>Jiayi Qian</strong>,
-                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                    <a href="https://scholar.google.com/citations?user=e5yfa28AAAAJ&hl=en">Jingtian Dang</a>,
-                    <a href="https://www.linkedin.com/in/ziwei-li-gt/">Ziwei Li</a>,
-                    <a href="https://yilundu.github.io/">Yilun Du</a>,
-                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
-                    <br>
-                    <span class="venue-badge venue-ispass">ISPASS 2026</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11527268">Paper</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/ASPLOS26_NSAI.png" alt="NSAI teaser">
-                      <img class="two thumbimg" src="images/ASPLOS26_NSAI.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>Compositional AI Beyond LLMs: System Implications of Neuro-Symbolic-Probabilistic
-                      Architectures</papertitle>
-                    <br>
-                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                    <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&hl=en">Hanchen Yang</a>,
-                    <strong>Jiayi Qian</strong>,
-                    <a href="https://scholar.google.com/citations?user=I8kUcx4AAAAJ&hl=en">Ritik Raj</a>,
-                    <a href="https://sites.google.com/casys.kaist.ac.kr/jupark/">Joongun Park</a>,
-                    <a href="https://scholar.google.com/citations?user=QI96hfoAAAAJ&hl=en">Chenyu Wang</a>,
-                    <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
-                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>
-                    <br>
-                    <span class="venue-badge venue-asplos">ASPLOS 2026</span>
-                    <br>
-                    <span class="award">🏆 Best Paper Award, DARPA SRC JUMP 2.0, 2025</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://dl.acm.org/doi/pdf/10.1145/3760250.3762235">Paper</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/post_diff.png" alt="Diffusion deployment">
-                      <img class="two thumbimg" src="images/post_diff.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion
-                      Model Deployment</papertitle>
-                    <br>
-                    Zhenbang Du,
-                    <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
-                    Lifu Wang,
-                    <strong>Jiayi Qian</strong>,
-                    Xiao Luo,
-                    <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
-                    <br>
-                    <span class="venue-badge venue-iccv">ICCV 2025</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://arxiv.org/pdf/2508.06160">Paper</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/ISPASS25_EmbodiedPerf.png" alt="Embodied systems">
-                      <img class="two thumbimg" src="images/ISPASS25_EmbodiedPerf.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and
-                      Scalability</papertitle>
-                    <br>
-                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                    <strong>Jiayi Qian</strong>,
-                    <a href="https://zishenwan.github.io">Yuhang Du</a>,
-                    <a href="http://jabbourjason.com">Jason Jabbour</a>,
-                    <a href="https://yilundu.github.io">Yilun Du</a>,
-                    <a href="https://www.yangkatiezhao.net">Yang (Katie) Zhao</a>,
-                    <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
-                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>,
-                    <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&hl=en">Vijay Janapa Reddi</a>
-                    <br>
-                    <span class="venue-badge venue-ispass">ISPASS 2025</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://arxiv.org/pdf/2504.18945">Paper</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/ASPLOS25_ReCA.png" alt="ReCA">
-                      <img class="two thumbimg" src="images/ASPLOS25_ReCA.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous
-                      Agents</papertitle>
-                    <br>
-                    <a href="https://zishenwan.github.io">Zishen Wan</a>,
-                    <a href="https://zishenwan.github.io">Yuhang Du</a>,
-                    <a href="https://mohamed-s-ibrahim.github.io">Mohamed Ibrahim</a>,
-                    <strong>Jiayi Qian</strong>,
-                    <a href="http://jabbourjason.com">Jason Jabbour</a>,
-                    <a href="https://www.yangkatiezhao.net">Yang (Katie) Zhao</a>,
-                    <a href="https://scholar.google.com/citations?user=P__ztgcAAAAJ&hl=en">Tushar Krishna</a>,
-                    <a href="https://scholar.google.com/citations?user=Uug6p-AAAAAJ&hl=en">Arijit Raychowdhury</a>,
-                    <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&hl=en">Vijay Janapa Reddi</a>
-                    <br>
-                    <span class="venue-badge venue-asplos">ASPLOS 2025</span>
-                    <br>
-                    <span class="award">⭐ Selected as Industry-Academia Partnership (IAP) Highlight</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016">Paper</a>
-                      <a href="publication/2025-04-02_ASPLOS25_ReCA_slide.pdf">Slide</a>
-                      <a href="https://docs.google.com/presentation/d/1qnYi0ZFcN51e6u8QLhAqyv_bZt_xWSfQOVxnkDSfuiM/edit?usp=sharing">Slide (long)</a>
-                      <a href="publication/ASPLOS25_ReCA_Poster.pdf">Poster</a>
-                      <a href="https://mp.weixin.qq.com/s/bnFKClWl0NyB0hIclxmwvQ">Media</a>
-                    </span>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="thumbcell" style="width:25%;vertical-align:top;">
-                    <div class="one">
-                      <img class="thumbimg" src="images/amoeballm.png" alt="AmoebaLLM">
-                      <img class="two thumbimg" src="images/amoeballm.png" alt="">
-                    </div>
-                  </td>
-                  <td class="textcell" style="width:75%;vertical-align:top;">
-                    <papertitle>AmoebaLLM: Constructing Any-Shape Large Language Models for Efficient and Instant
-                      Deployment</papertitle>
-                    <br>
-                    <a href="https://www.yongganfu.com/">Yonggan Fu</a>,
-                    <strong>Jiayi Qian*</strong>,
-                    <a href="https://yuzz1020.github.io/">Zhongzhi Yu*</a>,
-                    <a href="https://www.linkedin.com/in/junwei-li-50b176197/">Junwei Li*</a>,
-                    <a href="https://www.linkedin.com/in/yongan-zhang-141a71136/">Yongan Zhang</a>,
-                    <a href="https://dachuanshi.com/">Dachuan Shi</a>,
-                    <a href="https://xiangchi-yuan.github.io/">Xiangchi Yuan</a>,
-                    <a href="https://www.linkedin.com/in/ryakunin/">Roman Yakunin</a>,
-                    <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a>
-                    <br>
-                    <span class="venue-badge venue-neurips">NeurIPS 2024</span>
-                    <br>
-                    <span class="paper-links">
-                      <a href="https://arxiv.org/abs/2411.10606">Paper</a>
-                    </span>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Teaching -->
-          <div class="section-card">
-            <h2 style="margin:0 0 10px;">Teaching Experience</h2>
-            <ul style="list-style-type:none;padding:0;margin:0;">
-              <li>
-                <strong>Teaching Assistant</strong> — CSE 6140 Algorithms, Georgia Tech, Spring 2024. Instructor:
-                <a href="https://xiuweizhang.wordpress.com/">Prof. Xiuwei Zhang</a>.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Footer -->
-          <table style="border:0;border-collapse:separate;margin:0 auto;">
-            <tbody>
-              <tr>
-                <td style="padding:0;">
-                  <p style="text-align:right;font-size:small;margin:12px 0 0;color:#999;">
-                    Design and source code from
-                    <a href="https://github.com/jonbarron/jonbarron_website">jonbarron</a>.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </article>
+          <article class="paper manuscript" id="archorchestra" data-topic="design">
+            <div class="manuscript-marker" aria-hidden="true">02<span>IN PROGRESS</span></div>
+            <div class="paper-content"><p class="review-status">Under review · HPCA 2027 submission</p>
+              <h3>ArchOrchestra: Orchestrating Accelerator Design via Agent-Driven Exploration</h3><p class="authors"><strong>Jiayi Qian</strong>, <a href="https://scholar.google.com/citations?user=zoMQ8CoAAAAJ&amp;hl=en">Hanchen Yang</a>, <a href="https://ksouvik52.github.io/">Souvik Kundu</a>, <a href="https://scholar.google.com/citations?user=gy4UVGcAAAAJ&amp;hl=en">Vijay Janapa Reddi</a>, <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a>, <a href="https://zishenwan.github.io/">Zishen Wan</a></p>
+            </div>
+          </article></div>
+    </section>
+    <section class="experience section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><p class="eyebrow">04 / Background</p><h2 id="experience-title">Along the way.</h2><p>From Tsinghua to Georgia Tech.</p></div>
+      <div class="experience-content">
+        <h3 class="subheading">Education</h3>
+        <ol class="timeline">
+          <li><span class="timeline-date">Aug. 2025 — Present</span><h4>Georgia Institute of Technology</h4><p>Ph.D. in Electrical and Computer Engineering</p><p class="detail">Advisors: <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a> and <a href="https://zishenwan.github.io/">Zishen Wan</a></p></li>
+          <li><span class="timeline-date">Aug. 2023 — May 2025</span><h4>Georgia Institute of Technology</h4><p>M.S. in Computer Science</p><p class="detail">Advisors: <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a> and <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a></p></li>
+          <li><span class="timeline-date">Aug. 2019 — Jul. 2023</span><h4><a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a></h4><p>B.S. in Electronic Information Science and Technology</p><p class="detail">Department of Electronic Engineering · Visual SLAM research with Prof. Gang Liu</p></li>
+        </ol>
+        <h3 class="subheading">Research &amp; teaching</h3>
+        <div class="experience-row"><span class="timeline-date">Aug. 2025 — Present</span><div><h4>Graduate Research Assistant</h4><p>Georgia Tech · System/architecture co-design for AI; AI for architecture and systems.</p><p class="detail">Mentors: <a href="https://tusharkrishna.ece.gatech.edu/">Tushar Krishna</a> and <a href="https://zishenwan.github.io/">Zishen Wan</a></p></div></div>
+        <div class="experience-row"><span class="timeline-date">Oct. 2023 — May 2024</span><div><h4>Research Intern</h4><p>Georgia Tech · Efficient LLM and diffusion algorithms.</p><p class="detail">Mentor: <a href="https://eiclab.scs.gatech.edu/pages/team.html#PI">Yingyan (Celine) Lin</a></p></div></div>
+        <div class="experience-row"><span class="timeline-date">Jan. 2024 — May 2024</span><div><h4>Teaching Assistant</h4><p>Georgia Tech · CSE 6140 Algorithms.</p><p class="detail">Instructor: <a href="https://xiuweizhang.wordpress.com/">Xiuwei Zhang</a></p></div></div>
+        <details class="toolbox"><summary>Technical toolkit <span aria-hidden="true">+</span></summary><dl><dt>Programming &amp; ML</dt><dd>Python, PyTorch, C/C++, Verilog, CUDA, Shell, MATLAB</dd><dt>Frameworks &amp; tools</dt><dd>vLLM, MLC-LLM, TensorRT-LLM, Vivado, Docker, Nsight, VTune</dd></dl></details>
+      </div>
+    </section>
+    <footer class="site-footer"><div><a class="footer-name" href="#about">Jiayi Qian <span aria-hidden="true">↗</span></a><a href="mailto:jiayiqian@gatech.edu">jiayiqian@gatech.edu</a></div><p>Last updated September 2026.<br>Originally based on <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website</a>.</p></footer>
+  </main>
 </body>
-
 </html>

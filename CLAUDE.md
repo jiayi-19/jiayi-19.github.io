@@ -9,9 +9,10 @@ Static personal academic website for Jiayi Qian, hosted via GitHub Pages at `jia
 ## Architecture
 
 - **`index.html`** — The entire site is a single HTML file. All content (bio, publications, news, teaching) lives here. There is no build step, templating engine, or static site generator.
-- **`stylesheet.css`** — Base styles (fonts, links, typography) inherited from the Barron template. Site-specific overrides (publication layout, thumbnail sizing, section spacing) are in a `<style>` block inside `index.html`'s `<head>`.
+- **`homepage.css`** — Homepage typography, layout, responsive breakpoints, interaction states, reduced-motion support, and print styles. `stylesheet.css` is retained from the original template but is not loaded by the homepage.
+- **`script.js`** — Topic filters for publications and ongoing work. Research-direction links select the corresponding filter. All content is present in HTML; filter controls are hidden when JavaScript is unavailable.
 - **`images/`** — Profile photo (`cat.png`) and publication thumbnail PNGs. Each publication has one thumbnail image referenced in the pubs table.
-- **`data/`** — CV PDF (`CV-Jiayi.pdf`) and legacy `.bib` files from the Barron template (mostly unused).
+- **`data/`** — Current CV (`CV_jiayi.pdf`) and compatibility copy (`CV-Jiayi.pdf`), which should remain identical, plus legacy `.bib` files from the Barron template (mostly unused).
 - **`mipnerf/`, `mipnerf360/`, `zipnerf/`** — Self-contained project pages (each has its own `index.html`, `css/`, `js/`, `img/`). These are legacy from the template and not part of the main site content.
 
 ## Development
@@ -26,21 +27,21 @@ Deploy by pushing to `master` — GitHub Pages serves from the root of that bran
 
 ## HTML Structure (index.html)
 
-The page is structured as nested `<table>` elements (template convention, not semantic HTML):
+The homepage uses semantic sections, articles, lists, and native disclosure controls:
 
-1. **Header** — Name, bio paragraphs, contact links (left) + profile photo (right)
-2. **Research Interests** — Bulleted list with conference paper links
-3. **News** — Scrollable `<div>` (130px height) with timestamped entries
-4. **Selected Publications** — Table with class `pubs`, each paper is a `<tr>` with thumbnail (`.thumbcell`) and text (`.textcell`). Thumbnails use a `.one`/`.two` overlay pattern for hover effects.
-5. **Teaching Experience**
-6. **ClustrMaps visitor widget**
-7. **Footer** — Template attribution
+1. **Navigation and hero** — Name, bio, both Ph.D. advisors, contact links, and cat photo.
+2. **Research** — Systems for AI and AI for systems; links filter related work.
+3. **News** — Three recent entries and a native `<details>` archive.
+4. **Publications and ongoing work** — `.paper` articles with `data-topic="systems|design|models"`. Submissions under review live in `#ongoing-work` and must not be presented as accepted papers.
+5. **Experience** — Education timeline, research and teaching experience, and a technical toolkit disclosure.
+6. **Footer** — Contact, last-updated date, and template attribution.
 
 ## Key Conventions
 
-- Publication paper titles use custom `<papertitle>` elements (not standard HTML)
+- Paper titles use `<h3>` elements; published titles link to the paper.
 - Author's own name is bolded with `<strong>Jiayi Qian</strong>` in author lists; equal contribution marked with `*`
-- Conference names are bolded inside `<em>` tags: `<em><strong>VENUE YEAR</strong></em>`
-- Awards use `<font color="red"><strong>...</strong></font>`
-- News items follow the pattern: `[Month. Year] <b style="color:#3EA055;">[Paper]</b> description`
-- Thumbnail dimensions are controlled by `.one` class (170x120px in inline styles, overridden from 160x160px in stylesheet)
+- Conference and workshop names use `.venue` spans; workshop and review status must stay explicit.
+- Awards use `.award` paragraphs. News dates use `.news-date` spans.
+- Paper thumbnails use `.paper-image` and `object-fit: contain` to preserve research figures.
+- Keep author order and equal-contribution markers faithful to the current CV.
+- Preserve existing source files and project pages; the homepage has no dependency installation or build step.
