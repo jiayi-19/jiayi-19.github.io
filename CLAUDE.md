@@ -29,9 +29,9 @@ Deploy by pushing to `master` — GitHub Pages serves from the root of that bran
 
 The homepage uses semantic sections, articles, lists, and native disclosure controls:
 
-1. **Navigation and hero** — Text navigation without a monogram; name, bio, both Ph.D. advisors, incoming Google role, contact links, and cat photo.
+1. **Navigation and hero** — Text navigation without a monogram; name, bio, both Ph.D. advisors, current Google role, contact links, and cat photo.
 2. **Research** — Sys/Arch for AI and AI for Sys/Arch; links filter related work.
-3. **Background and experience** — Industry experience first, then education and research/teaching experience. Google is labeled Incoming until the user confirms the role has started. No technical toolkit.
+3. **Background and experience** — Industry experience first, then education and research/teaching experience. The user confirmed the Google role has started; describe it as current. No technical toolkit.
 4. **News** — Three recent entries and a native `<details>` archive.
 5. **Publications and ongoing work** — `.paper` articles with `data-topic="systems|design|models"`. Submissions under review live in `#ongoing-work` and must not be presented as accepted papers. The user requested omitting Fast-AIPS from the homepage while retaining ArchOrchestra.
 6. **Footer** — Contact, last-updated date, and template attribution.

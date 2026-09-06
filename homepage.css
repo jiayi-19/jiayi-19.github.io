@@ -47,7 +47,6 @@ h1 { font-size: clamp(52px,6.6vw,82px); font-weight: 800; letter-spacing: -.065e
 .advisor-line a { white-space: nowrap; }
 .industry-note { padding-top: 4px; font-size: 14px; }
 .industry-note strong { color: var(--ink); font-weight: 600; }
-.incoming-label { color: var(--blue); font: 11px/1.7 var(--mono); text-transform: uppercase; letter-spacing: .05em; margin-right: 10px; }
 .contact-links { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 28px; }
 .contact-links a { font-size: 14px; font-weight: 500; }
 .contact-links a > span { margin-left: 5px; }
@@ -145,7 +144,6 @@ h4 a { color: var(--ink); }
 .industry-experience .subheading { margin-bottom: 0; }
 .industry-card { display: grid; grid-template-columns: 165px minmax(0,1fr); gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .industry-card h4 { font-size: 22px; }
-.incoming-status { display: inline-block; padding: 3px 8px; border-radius: 3px; background: #e9effb; color: var(--blue); font: 12px/1.5 var(--mono); margin-top: 5px; }
 .site-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; padding: 33px 0 36px; border-top: 1px solid var(--line); }
 .site-footer > div { display: flex; flex-direction: column; gap: 8px; }
 .site-footer a { font-size: 13px; }
