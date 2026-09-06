@@ -45,8 +45,6 @@ h1 { font-size: clamp(52px,6.6vw,82px); font-weight: 800; letter-spacing: -.065e
 .hero-copy > p:not(.bio-lead):not(.eyebrow):not(.name-chinese) { color: var(--muted); }
 .advisor-line { margin-top: 20px; }
 .advisor-line a { white-space: nowrap; }
-.industry-note { padding-top: 4px; font-size: 14px; }
-.industry-note strong { color: var(--ink); font-weight: 600; }
 .contact-links { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 28px; }
 .contact-links a { font-size: 14px; font-weight: 500; }
 .contact-links a > span { margin-left: 5px; }
@@ -144,6 +142,8 @@ h4 a { color: var(--ink); }
 .industry-experience .subheading { margin-bottom: 0; }
 .industry-card { display: grid; grid-template-columns: 165px minmax(0,1fr); gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .industry-card h4 { font-size: 22px; }
+.industry-meta { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.company-logo { width: 110px; height: auto; }
 .site-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; padding: 33px 0 36px; border-top: 1px solid var(--line); }
 .site-footer > div { display: flex; flex-direction: column; gap: 8px; }
 .site-footer a { font-size: 13px; }

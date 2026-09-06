@@ -29,7 +29,7 @@ Deploy by pushing to `master` — GitHub Pages serves from the root of that bran
 
 The homepage uses semantic sections, articles, lists, and native disclosure controls:
 
-1. **Navigation and hero** — Text navigation without a monogram; name, bio, both Ph.D. advisors, current Google role, contact links, and cat photo.
+1. **Navigation and hero** — Text navigation without a monogram; name, bio, both Ph.D. advisors, contact links, and cat photo. Keep the Google role in Industry experience rather than adding a separate hero sentence.
 2. **Research** — Sys/Arch for AI and AI for Sys/Arch; links filter related work.
 3. **Background and experience** — Education first, then industry experience, then research/teaching experience. The user confirmed the Google role has started; describe it as current. No technical toolkit.
 4. **News** — Three recent entries and a native `<details>` archive.
