@@ -28,23 +28,3 @@
   filters.hidden = false;
   applyFilter('all');
 })();
-
-(() => {
-  const viewer = document.getElementById('figure-viewer');
-  if (!viewer || typeof viewer.showModal !== 'function') return;
-
-  const title = document.getElementById('figure-viewer-title');
-  const scrollArea = viewer.querySelector('.figure-viewer-scroll');
-  document.querySelectorAll('[data-enlarge-figure]').forEach(button => {
-    const source = button.closest('.paper-figure').querySelector('img');
-    button.addEventListener('click', () => {
-      const figure = source.cloneNode();
-      figure.loading = 'eager';
-      title.textContent = `${button.dataset.enlargeFigure} figure`;
-      scrollArea.replaceChildren(figure);
-      viewer.showModal();
-      scrollArea.scrollTo(0, 0);
-    });
-    button.hidden = false;
-  });
-})();
