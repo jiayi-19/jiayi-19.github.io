@@ -116,15 +116,21 @@ details[open] > summary > span { transform: rotate(45deg); }
 .paper-links a { font-size: 13px; font-weight: 600; padding-block: 3px; }
 .award { color: #8b620d; font-size: 12px; margin: 0 0 7px; }
 .ongoing-work { margin-top: 34px; padding: 25px 26px 0; border: 1px dashed #c7d2e4; border-radius: 7px; background: #f2f5fb; }
-.ongoing-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px 20px; }
-.ongoing-heading h3 { font-size: 18px; letter-spacing: -.025em; }
-.ongoing-heading p { color: var(--muted); font-size: 13px; margin: 0; }
-.manuscript { grid-template-columns: 72px minmax(0,1fr); gap: 25px; padding: 24px 0; }
+.ongoing-heading { font-size: 18px; letter-spacing: -.025em; }
+.manuscript { display: block; padding: 24px 0; }
 .manuscript:last-child { border-bottom: 0; }
 .manuscript h3 { font-size: 18px; }
 .manuscript .authors { margin: 0; }
-.manuscript-marker { font: 38px/1.2 var(--mono); color: #9aadc9; padding-top: 8px; }
-.manuscript-marker span { display: block; font-size: 10px; line-height: 1.5; margin-top: 8px; }
+.manuscript-overview {
+  display: block;
+  width: min(100%, 800px);
+  height: auto;
+  margin-top: 16px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e4e8f0;
+  border-radius: 6px;
+}
 .review-status { font: 12px/1.7 var(--mono); color: #71551e; margin: 0; }
 .subheading { font-size: 19px; letter-spacing: -.03em; margin-bottom: 24px; }
 .timeline { list-style: none; margin: 0 0 42px; padding: 0 0 0 23px; border-left: 1px solid #c8d5ee; }
@@ -161,7 +167,6 @@ h4 a { color: var(--ink); }
   .direction h3 { max-width: 330px; }
   .publication-toolbar { align-items: flex-start; }
   .paper { grid-template-columns: 200px minmax(0,1fr); gap: 27px; }
-  .manuscript { grid-template-columns: 60px minmax(0,1fr); }
   .experience-row, .industry-card { grid-template-columns: 1fr; gap: 3px; }
   .industry-card { gap: 15px; }
 }
@@ -211,8 +216,6 @@ h4 a { color: var(--ink); }
   .authors { font-size: 13px; }
   .venue { font-size: 11px; }
   .ongoing-work { padding: 22px 20px 0; }
-  .manuscript { grid-template-columns: 1fr; gap: 0; }
-  .manuscript-marker { display: none; }
   .manuscript h3 { font-size: 17px; }
   .section-heading > p:last-child:not(.eyebrow) { margin-top: 10px; margin-bottom: 0; }
   .experience-row, .industry-card { grid-template-columns: 165px minmax(0,1fr); gap: 24px; }
@@ -271,7 +274,6 @@ h4 a { color: var(--ink); }
   .research-directions { margin-top: 20px; }
   .paper, .direction, .timeline li, .experience-row, .industry-card { break-inside: avoid; }
   .paper { grid-template-columns: 140px minmax(0,1fr); }
-  .manuscript { grid-template-columns: 1fr; }
   .paper[hidden], #ongoing-work[hidden] { display: block !important; }
   a { color: inherit; }
 }

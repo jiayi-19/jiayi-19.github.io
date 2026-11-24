@@ -13,8 +13,8 @@
     ongoing.hidden = !papers.some((paper) => ongoing.contains(paper) && !paper.hidden);
     const visible = papers.filter((paper) => !paper.hidden);
     const published = visible.filter((paper) => !ongoing.contains(paper)).length;
-    const submissions = visible.length - published;
-    status.textContent = `${published} published or workshop papers and ${submissions} submissions under review shown.`;
+    const inProgress = visible.length - published;
+    status.textContent = `${published} published or workshop papers and ${inProgress} works in progress shown.`;
   };
   buttons.forEach((button) => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
   document.querySelectorAll('[data-research-filter]').forEach((link) => {
